@@ -22,6 +22,7 @@
             top: 0;
             width: 100%;
             height: 50px;
+            transform: translate3d(0, 0, 0); /* for gpu acceleration */
             background-color: rgba(0, 0, 0, 0.5);
         }
         nav .wrapper {
@@ -30,6 +31,11 @@
             height: 100%;
             text-align: center;
             cursor: pointer;
+        }
+        nav .wrapper img {
+            height: 80%;
+            top: 10%;
+            position: relative;
         }
         nav .wrapper span {
             position: absolute;
@@ -42,8 +48,7 @@
             margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
         }
         footer {
-            position: fixed;
-            bottom: 0;
+            position: absolute;
             left: 0;
             right: 0;
             padding: 25px;
@@ -56,17 +61,25 @@
             font-size: 30px;
             text-transform: capitalize;
         }
+        #bigLogo {
+            height: 400px;
+            transition: opacity 2s, transform 2s;
+        }
+        .logoPreAnimation {
+            opacity: 0;
+            transform: translate3d(0, -50px, 0) scale(0.9);
+        }
     </style>
 </head>
 <body>
     <nav>
-       <a href="./index.html" class="wrapper"><img src="" alt="TechnoJam Logo"></a>
+       <a href="./index.html" class="wrapper"><img src="./images/logo.png" alt="TechnoJam Logo"></a>
        <a href="./about.html" class="wrapper"><span>About</span></a>
        <a href="./team.html" class="wrapper"><span>Team</span></a>
        <a href="./events.html" class="wrapper"><span>Events</span></a>
     </nav>
     <article>
-        Hey, it's TechnoJam!
+        <img id="bigLogo" class="logoPreAnimation" onload="animateLogo()" src="./images/logo.png" alt="TechnoJam Logo">
     </article>
     <footer>
         <h2>Contact Us</h2>
@@ -77,5 +90,11 @@
         <span>Facebook: </span><a href="https://www.facebook.com/technojam.scse/" target="_blank">
         TechnoJam</a>
     </footer>
+    <script>
+        // ensures that animation occurs after logo has loaded.
+        function animateLogo() {
+            document.getElementById("bigLogo").classList.remove('logoPreAnimation');
+        }
+    </script>
 </body>
 </html>
