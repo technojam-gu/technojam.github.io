@@ -6,10 +6,19 @@
     <title>TechnoJam by Galgotias University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="This is the official website of TechnoJam, the technical group of Galgotias University."/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#603cba">
+    <meta name="apple-mobile-web-app-title" content="TechnoJam">
+    <meta name="application-name" content="TechnoJam">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
     <style>
         body {
             font-family:Roboto,Oxygen,'Open Sans',-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,'Segoe UI','Helvetica Neue',Arial,sans-serif;
-            background-color: rgba(190, 38, 108, 1);
+            background-color: rgb(190, 38, 108);
             color: white;
         }
         a {
@@ -42,6 +51,10 @@
             top: 50%;
             text-transform: uppercase;
             transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+        nav .wrapper:hover span {
+            text-shadow: 0 0 5px rgb(81, 203, 235);
         }
         article {
             text-align: center;
@@ -52,14 +65,13 @@
             left: 0;
             right: 0;
             padding: 25px;
-            padding-top: 0;
             background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
         }
         footer h2 {
             font-weight: 100;
             font-size: 30px;
-            text-transform: capitalize;
+            margin:0;
         }
         #bigLogo {
             height: 400px;
@@ -82,8 +94,8 @@
         <img id="bigLogo" class="logoPreAnimation" onload="animateLogo()" src="./images/logo.png" alt="TechnoJam Logo">
     </article>
     <footer>
-        <h2>Contact Us</h2>
-        <span>E-mail: </span><a href="mailto:technojam@galgotiasuniversity.edu.in">
+        <h2>C o n t a c t<br>U s</h2>
+        <span>Email: </span><a href="mailto:technojam@galgotiasuniversity.edu.in">
         techno<span>jam@galgotiasun</span>iversity.edu.in
         </a>
         <br>
