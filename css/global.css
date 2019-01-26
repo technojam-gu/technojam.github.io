@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
 :root{
 	--body-bg: #fff;
 	--text-primary-color: #ddd;
 	--text-secondary-color: #444;
 	--primary-background: linear-gradient(rgba(223, 90, 71,0.9),rgba(204, 81, 131,0.9));
 	--primary-background-fallback: #dc4c50;
-	--secondary-background-fallback: rgba(80, 158, 211,0.85);
+    --secondary-background-fallback: rgba(80, 158, 211,0.85);
 }
 body {
 	font-family: 'Work Sans', sans-serif;
 	margin: 0;
     padding: 0;
-    overflow-x: none;
+    overflow-x: hidden;
+}
+a {
+    font-weight: 300;
+    color: rgb(91, 212, 228);
+    text-decoration: none;
 }
 nav {
     display: grid;
@@ -43,7 +48,7 @@ footer {
     color: white;
     position: absolute;
     left: 0;
-    width: calc(100vw - 50px);
+    width: calc(100% - 50px);
     padding: 25px;
     background-color: rgba(0, 0, 0, 0.5);
 }
