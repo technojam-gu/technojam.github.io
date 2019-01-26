@@ -1,63 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+:root{
+	--body-bg: #fff;
+	--text-primary-color: #ddd;
+	--text-secondary-color: #444;
+	--primary-background: linear-gradient(rgba(223, 90, 71,0.9),rgba(204, 81, 131,0.9));
+	--primary-background-fallback: #dc4c50;
+	--secondary-background-fallback: rgba(80, 158, 211,0.85);
+}
 body {
-    font-family:Roboto,Oxygen,'Open Sans',-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+	font-family: 'Work Sans', sans-serif;
+	margin: 0;
+	padding: 0;
 }
-a {
-    color: rgb(81, 203, 235);
-    text-decoration: none;
-}
-nav {
-    position: fixed;
+.global-header{
+	position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 50px;
-    transform: translate3d(0, 0, 0); /* for gpu acceleration */
-    background-color: rgba(0, 0, 0, 0.5);
+	height: 50px;
+	background: transparent;
+	text-align: center;
+	vertical-align: middle;
 }
-nav .wrapper {
-    float: left;
-    width: 25%;
-    height: 100%;
-    text-align: center;
-    cursor: pointer;
+nav {
+    transform: translate3d(0, 0, 0);  /*for gpu acceleration*/
 }
-nav .wrapper img {
-    height: 80%;
-    top: 10%;
-    position: relative;
+.header-nav{
+	display: inline;
+	vertical-align: middle;
 }
-nav .wrapper span {
-    position: absolute;
-    top: 50%;
-    text-transform: uppercase;
-    transform: translate(-50%, -50%);
-    transition: all 0.5s;
+#logo{
+    height: 3em;
+    width: 3em;
+	border-radius: 100%;
+	margin-top: 2px;
+	box-shadow: 1px 4px 6px 2px #00000033;
+	background: rgba(255,255,255,0.909);
+	cursor: pointer;
+	user-select: none;
+	z-index: 100;
 }
-nav .wrapper:hover span {
-    text-shadow: 0 0 5px rgb(81, 203, 235);
+#navs{
+	transition: .3s linear;
+	overflow: hidden;
+	border-radius: 4px;
+	text-align: center;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+	z-index: 100;
+	width: 6em;
+	margin: auto;
 }
-footer {
-    color: white;
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 25px;
-    background-color: rgba(0, 0, 0, 0.5);
+.navs{
+	height: 0;
+	opacity: 0.5;
 }
-footer h2 {
-    font-weight: 100;
-    font-size: 30px;
-    margin: 0;
-    text-align: center;
+.show{
+	opacity: 1;
+	height: 6.53em;
+	box-shadow: 1px 4px 6px 2px #00000033;
 }
-footer .wrapper {
-    margin: 10px;
-    margin-left: 30px;
+.navs>a, .navs>a:visited{
+	margin: 0;
+	z-index: 100;
+	background: rgba(255,255,255,0.909);
+	color: var(--text-secondary-color);
+	display: block;
+	text-decoration: none;
+	padding: 1em;
+	border-bottom: 1px solid;
 }
-footer .wrapper img {
-    height: 20px;
-    margin-right: 10px;
+.liner{
+	background: linear-gradient(to right,#78d0e3 25%,#593985,#9d3d68);
+	border: 0;
+	margin: 0;
+	padding: 2px;
 }
-article {
-    margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
+footer{
+	text-align: center;
+	bottom: 0;
+	padding: 1em 0;
+}
+h2.contact{
+	color: var(--text-secondary-color);
+	font-weight: 100;
+	letter-spacing: 9px;
+	padding: .5em;
+	font-size: 275%;
+	font-family: 'Work Sans';
+	width: fit-content;
+	margin: auto;
+	word-spacing: 100vw;
 }
