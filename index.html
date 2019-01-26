@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+    <link rel="manifest" href="./manifest.json">
     <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#603cba">
     <meta name="apple-mobile-web-app-title" content="TechnoJam">
     <meta name="application-name" content="TechnoJam">
@@ -20,9 +20,6 @@
         body {
             background-color: rgb(190, 38, 108);
             color: white;
-        }
-        footer {
-            bottom: 0;
         }
         article {
             text-align: center;
@@ -48,7 +45,7 @@
        <a href="./events.html" class="wrapper"><span>Events</span></a>
     </nav>
     <article>
-        <img id="bigLogo" class="logoPreAnimation" src="./images/index/logo.png" alt="TechnoJam Logo">
+        <img id="bigLogo" class="logoPreAnimation" src="" alt="TechnoJam Logo">
     </article>
     <footer>
         <h2>C o n t a c t<br>U s</h2>
@@ -67,10 +64,11 @@
     </footer>
     <script>
         // ensures that animation occurs after logo has loaded.
+        document.getElementById('bigLogo').src = './images/index/logo.png';
         function animateLogo() {
-            document.getElementById("bigLogo").classList.remove('logoPreAnimation');
+            document.getElementById('bigLogo').classList.remove('logoPreAnimation');
         }
-        document.getElementById('bigLogo').onload = animateLogo;
+        document.getElementById('bigLogo').addEventListener('load', animateLogo);
     </script>
 </body>
 
