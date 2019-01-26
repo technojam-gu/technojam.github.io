@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TechnoJam by Galgotias University</title>
+    <title>The TechnoJam Team | TechnoJam by Galgotias University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the official website of TechnoJam, the technical group of Galgotias University."/>
+    <meta name="description" content="Meet the team of TechnoJam, which makes all the technical events happening in Galgotias University possible."/>
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -17,22 +16,34 @@
     <meta name="theme-color" content="#ffffff">
     <style>
         body {
-            background-color: rgb(190, 38, 108);
-            color: white;
-        }
-        footer {
-            bottom: 0;
+            background-color: rgba(117, 45, 134, 0.1);
         }
         article {
             text-align: center;
         }
-        #bigLogo {
-            height: 400px;
-            transition: opacity 2s, transform 2s;
+        .card {
+            margin: calc(5vw - 15px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            background-color: white;
+            border-radius: 5px;
+            height: 30vw;
+            width: 40vw;
+            float: left;
+            text-align: center;
         }
-        .logoPreAnimation {
-            opacity: 0;
-            transform: translate3d(0, -50px, 0) scale(0.9);
+        .card h1 {
+            font-size: 30px;
+            font-weight: 100;
+        }
+        .card .wrapper {
+            margin: 20px;
+        }
+        @media screen and (max-width: 800px) {
+            .card {
+                margin: calc(10vw - 15px);
+                height: 40vw;
+                width: 80vw;
+            }
         }
     </style>
     <link rel="stylesheet" href="./css/global.css">
@@ -45,7 +56,26 @@
        <a href="./events.html" class="wrapper"><span>Events</span></a>
     </nav>
     <article>
-        <img id="bigLogo" class="logoPreAnimation" onload="animateLogo()" src="./images/logo.png" alt="TechnoJam Logo">
+        <div class="card">
+            <div class="wrapper">
+                <h1>Kaustubh Rai</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div class="wrapper">
+                <h1>Honey Sharma</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div class="wrapper">
+                <h1>Darshan Baid</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div class="wrapper">
+                <h1>Swetank</h1>
+            </div>
+        </div>
     </article>
     <footer>
         <h2>C o n t a c t<br>U s</h2>
@@ -62,11 +92,5 @@
             @technojam_galgotias</a>
         </div>
     </footer>
-    <script>
-        // ensures that animation occurs after logo has loaded.
-        function animateLogo() {
-            document.getElementById("bigLogo").classList.remove('logoPreAnimation');
-        }
-    </script>
 </body>
-</html>
+</html> 
