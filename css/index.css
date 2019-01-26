@@ -1,0 +1,16 @@
+body{
+	background-color: var(--body-bg);
+}
+.coursel{
+	display: inline-flex;
+	height: 98vh;
+	margin: 0;
+}
+.coursel-item{
+	height: inherit;
+	width: 100vw;
+	color: var(--text-primary-color);
+	background: var(--primary-background);
+	text-align: center;
+	font-size: 2000%;
+}

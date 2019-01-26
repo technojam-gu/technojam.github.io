@@ -1,11 +1,17 @@
-body {
-    font-family: Roboto,Oxygen,'Open Sans',-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,'Segoe UI','Helvetica Neue',Arial,sans-serif;
-    overflow-x: hidden;
-    margin:0;
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+:root{
+	--body-bg: #fff;
+	--text-primary-color: #ddd;
+	--text-secondary-color: #444;
+	--primary-background: linear-gradient(rgba(223, 90, 71,0.9),rgba(204, 81, 131,0.9));
+	--primary-background-fallback: #dc4c50;
+	--secondary-background-fallback: rgba(80, 158, 211,0.85);
 }
-a {
-    color: rgb(81, 203, 235);
-    text-decoration: none;
+body {
+	font-family: 'Work Sans', sans-serif;
+	margin: 0;
+    padding: 0;
+    overflow-x: none;
 }
 nav {
     display: grid;
