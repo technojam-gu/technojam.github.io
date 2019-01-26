@@ -12,86 +12,60 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.global-header{
-	position: fixed;
+nav {
+    z-index: 20;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-	height: 50px;
-	background: transparent;
-	text-align: center;
-	vertical-align: middle;
+    height: 50px;
+    transform: translate3d(0, 0, 0); /* for gpu acceleration */
+    background-color: rgba(0, 0, 0, 0.5);
 }
-nav {
-    transform: translate3d(0, 0, 0);  /*for gpu acceleration*/
+nav .wrapper {
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
 }
-.header-nav{
-	display: inline;
-	vertical-align: middle;
+nav .wrapper img {
+    height: 80%;
+    top: 10%;
+    position: relative;
 }
-#logo{
-    height: 3em;
-    width: 3em;
-	border-radius: 100%;
-	margin-top: 2px;
-	box-shadow: 1px 4px 6px 2px #00000033;
-	background: rgba(255,255,255,0.909);
-	cursor: pointer;
-	user-select: none;
-	z-index: 100;
+nav .wrapper span {
+    position: absolute;
+    top: 50%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    transition: text-shadow 0.5s;
 }
-#navs{
-	transition: .3s linear;
-	overflow: hidden;
-	border-radius: 4px;
-	text-align: center;
-	margin-block-start: 0;
-	margin-block-end: 0;
-	margin-inline-start: 0;
-	margin-inline-end: 0;
-	padding-inline-start: 0;
-	z-index: 100;
-	width: 6em;
-	margin: auto;
+nav .wrapper:hover span, nav .wrapper:focus span {
+    text-shadow: 0 0 5px rgb(81, 203, 235);
 }
-.navs{
-	height: 0;
-	opacity: 0.5;
+footer {
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.show{
-	opacity: 1;
-	height: 6.53em;
-	box-shadow: 1px 4px 6px 2px #00000033;
+footer h2 {
+    font-weight: 100;
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
 }
-.navs>a, .navs>a:visited{
-	margin: 0;
-	z-index: 100;
-	background: rgba(255,255,255,0.909);
-	color: var(--text-secondary-color);
-	display: block;
-	text-decoration: none;
-	padding: 1em;
-	border-bottom: 1px solid;
+footer .wrapper {
+    margin: 10px;
+    margin-left: 30px;
 }
-.liner{
-	background: linear-gradient(to right,#78d0e3 25%,#593985,#9d3d68);
-	border: 0;
-	margin: 0;
-	padding: 2px;
+footer .wrapper img {
+    height: 20px;
+    margin-right: 10px;
 }
-footer{
-	text-align: center;
-	bottom: 0;
-	padding: 1em 0;
-}
-h2.contact{
-	color: var(--text-secondary-color);
-	font-weight: 100;
-	letter-spacing: 9px;
-	padding: .5em;
-	font-size: 275%;
-	font-family: 'Work Sans';
-	width: fit-content;
-	margin: auto;
-	word-spacing: 100vw;
+article {
+    margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
 }
