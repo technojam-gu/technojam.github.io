@@ -1,37 +1,33 @@
 body {
-    font-family:Roboto,Oxygen,'Open Sans',-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+    font-family: Roboto,Oxygen,'Open Sans',-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+    overflow-x: hidden;
+    margin:0;
 }
 a {
     color: rgb(81, 203, 235);
     text-decoration: none;
 }
 nav {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 50px;
     z-index: 20;
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 50px;
     transform: translate3d(0, 0, 0); /* for gpu acceleration */
     background-color: rgba(0, 0, 0, 0.5);
 }
 nav .wrapper {
-    float: left;
-    width: 20%;
-    height: 100%;
     text-align: center;
     cursor: pointer;
 }
-nav .wrapper img {
-    height: 80%;
-    top: 10%;
-    position: relative;
-}
 nav .wrapper span {
-    position: absolute;
-    top: 50%;
+    position: relative;
+    top: 25%;
     text-transform: uppercase;
-    transform: translate(-50%, -50%);
     transition: text-shadow 0.5s;
 }
 nav .wrapper:hover span, nav .wrapper:focus span {
@@ -41,7 +37,7 @@ footer {
     color: white;
     position: absolute;
     left: 0;
-    right: 0;
+    width: calc(100vw - 50px);
     padding: 25px;
     background-color: rgba(0, 0, 0, 0.5);
 }
