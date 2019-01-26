@@ -6,6 +6,7 @@ a {
     text-decoration: none;
 }
 nav {
+    z-index: 20;
     position: fixed;
     left: 0;
     top: 0;
@@ -31,9 +32,9 @@ nav .wrapper span {
     top: 50%;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
-    transition: all 0.5s;
+    transition: text-shadow 0.5s;
 }
-nav .wrapper:hover span {
+nav .wrapper:hover span, nav .wrapper:focus span {
     text-shadow: 0 0 5px rgb(81, 203, 235);
 }
 footer {
