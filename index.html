@@ -46,7 +46,7 @@
        <a href="./events.html" class="wrapper"><span>Events</span></a>
     </nav>
     <article>
-        <img id="bigLogo" class="logoPreAnimation" onload="animateLogo()" src="./images/index/logo.png" alt="TechnoJam Logo">
+        <img id="bigLogo" class="logoPreAnimation" src="./images/index/logo.png" alt="TechnoJam Logo">
     </article>
     <footer>
         <h2>C o n t a c t<br>U s</h2>
@@ -68,6 +68,7 @@
         function animateLogo() {
             document.getElementById("bigLogo").classList.remove('logoPreAnimation');
         }
+        document.getElementById('bigLogo').onload = animateLogo;
     </script>
 </body>
 </html>
