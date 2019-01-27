@@ -15,10 +15,6 @@
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
     <style>
-        body {
-            background-color: rgba(117, 45, 134, 0.4);
-            color: white;
-        }
         h1 {
             color: rgb(117, 45, 134);
         }
@@ -48,13 +44,27 @@
             background-color: white;
             border-radius: 5px;
             text-align: center;
-        }
-        .card h1 {
-            font-size: 30px;
-            font-weight: 100;
+            min-height: 200px;
         }
         .card .wrapper {
             margin: 20px;
+        }
+        .profile {
+            display: flex;
+            position: relative;
+        }
+        .profile img {
+            height: 30px;
+            border-radius: 50%;
+        }
+        .profile h1, .profile img {
+            margin: 15px 0 35px 0;
+        }
+        .profile h1 {
+            font-size: 30px;
+            font-weight: 100;
+            margin-left: auto;
+            margin-right: auto;
         }
         @media screen and (max-width: 800px) {
             article > .wrapper {
@@ -78,28 +88,52 @@
         <div class="wrapper">
             <div class="card">
                 <div class="wrapper">
-                    <h1>Kaustubh Rai</h1>
+                    <div class="profile">
+                        <img src="./images/logo.png" alt="Profile Picture">
+                        <h1>Kaustubh Rai</h1>
+                    </div>
+                    <a>Email</a><br>
+                    <a>Github Link</a><br>
+                    <a>LinkedIn Link</a><br>
                 </div>
             </div>
             <div class="card">
                 <div class="wrapper">
-                    <h1>Honey Sharma</h1>
+                    <div class="profile">
+                        <img src="./images/logo.png" alt="Profile Picture">
+                        <h1>Honey Sharma</h1>
+                    </div>
+                    <a>Email</a><br>
+                    <a>Github Link</a><br>
+                    <a>LinkedIn Link</a><br>
                 </div>
             </div>
             <div class="card">
                 <div class="wrapper">
-                    <h1>Darshan Baid</h1>
+                    <div class="profile">
+                        <img src="./images/logo.png" alt="Profile Picture">
+                        <h1>Darshan Baid</h1>
+                    </div>
+                    <a>Email</a><br>
+                    <a>Github Link</a><br>
+                    <a>LinkedIn Link</a><br>
                 </div>
             </div>
             <div class="card">
                 <div class="wrapper">
-                    <h1>Swetank</h1>
+                    <div class="profile">
+                        <img src="./images/logo.png" alt="Profile Picture">
+                        <h1>Swetank</h1>
+                    </div>
+                    <a>Email</a><br>
+                    <a>Github Link</a><br>
+                    <a>LinkedIn Link</a><br>
                 </div>
             </div>
         </div>
 	</article>
 	<footer>
-        <h2>C o n t a c t<br>U s</h2>
+        <h2>Contact<br>Us</h2>
         <div class="wrapper">
             <img src="./images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
             techno<span>jam@galgotiasun</span>iversity.edu.in</a>

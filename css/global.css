@@ -12,6 +12,9 @@ body {
 	margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-image: linear-gradient(rgb(91, 212, 228), rgb(243, 62, 128));
+    background-attachment: fixed;
+    color: white;
 }
 a {
     font-weight: 300;
@@ -45,7 +48,6 @@ nav .wrapper:hover span, nav .wrapper:focus span {
     text-shadow: 0 0 5px rgb(81, 203, 235);
 }
 footer {
-    color: white;
     position: absolute;
     left: 0;
     width: calc(100% - 50px);
@@ -57,6 +59,7 @@ footer h2 {
     font-size: 30px;
     margin: 0;
     text-align: center;
+    letter-spacing: 10px;
 }
 footer .wrapper {
     margin: 10px;
@@ -68,4 +71,5 @@ footer .wrapper img {
 }
 article {
     margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
+    overflow-x: hidden;
 }

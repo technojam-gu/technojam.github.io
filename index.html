@@ -16,10 +16,6 @@
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
     <style>
-        body {
-            background-color: rgb(190, 38, 108);
-            color: white;
-        }
         article {
             text-align: center;
         }
@@ -47,7 +43,7 @@
         <img id="bigLogo" class="logoPreAnimation" src="" alt="TechnoJam Logo">
     </article>
     <footer>
-        <h2>C o n t a c t<br>U s</h2>
+        <h2>Contact<br>Us</h2>
         <div class="wrapper">
             <img src="./images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
             techno<span>jam@galgotiasun</span>iversity.edu.in</a>
@@ -62,12 +58,15 @@
         </div>
     </footer>
     <script>
-        // ensures that animation occurs after logo has loaded.
         document.getElementById('bigLogo').src = './images/index/logo.png';
-        function animateLogo() {
+
+        // ensures that animation occurs after logo has loaded.
+        document.getElementById('bigLogo').addEventListener('load', function () {
             document.getElementById('bigLogo').classList.remove('logoPreAnimation');
-        }
-        document.getElementById('bigLogo').addEventListener('load', animateLogo);
+            setTimeout(function () {
+                document.getElementById('bigLogo').style.transition = 'all 0s';
+            }, 2000);
+        });
     </script>
 </body>
 </html>
