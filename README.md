@@ -6,9 +6,9 @@ This repository contains the source code for the official website of TechnoJam.
 
 - Index
 - About
+- Events
 - Team
 - Alumni
-- Events
 
 ### Directory Structure
 
@@ -19,7 +19,7 @@ Repo
 |     |----svg/
 |     |     |----svg-files
 |     |
-|     |----workshop-name/
+|     |----events/
 |     |     |----image-files
 |     |
 |     |----common-image-files
@@ -41,9 +41,4 @@ Repo
 
 ### Contributing to This Repo
 
-- Create issue
-- Wait for us to assign that to you.
-- Fork This Repo to your account
-- Create A Branch (for ex- mod-1)
-- Commit Changes
-- Create Pull Request
+[CONTRIBUTING.md](./CONTRIBUTING.md)

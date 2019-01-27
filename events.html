@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Meet the Team | Team TechnoJam | Galgotias University</title>
+    <title>Events | Team TechnoJam | Galgotias University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Meet the team of TechnoJam, which makes all the technical events happening in Galgotias University possible."/>
+    <meta name="description" content="All the upcoming as well as all the previously conducted events by the TechnoJam team at Galgotias Univesity."/>
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -30,6 +30,11 @@
         article > h1 img {
             height: 50px;
         }
+        article h2 {
+            text-align: left;
+            font-weight: 100;
+            font-size: 35px;
+        }
         article p {
             font-size: 20px;
             text-align: left;
@@ -42,12 +47,16 @@
         .card {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
             background-color: white;
+            color: var(--text-secondary-color);
             border-radius: 5px;
             text-align: center;
             min-height: 200px;
         }
         .card > .wrapper {
             margin: 20px;
+        }
+        .card p, .card a {
+            text-align: center;
         }
         .profile {
             display: flex;
@@ -93,54 +102,12 @@
        <a href="./alumni.html" class="wrapper"><span>Alumni</span></a>
     </nav>
     <article>
-        <h1>The <img src="./images/logo.png" alt="TechnoJam"> Team</h1>
-        <p>Meet the team of TechnoJam, which makes all the technical events happening in Galgotias University possible.</p>
-        <div class="wrapper">
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Kaustubh Rai</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Honey Sharma</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Darshan Baid</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Swetank</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-        </div>
+        <h1><img src="./images/logo.png" alt="TechnoJam"> Events</h1>
+        <p>Here are all the upcoming as well as all the previously conducted events by the TechnoJam team.</p>
+        <h2>Upcoming Events</h2>
+        <div class="wrapper" id="upcoming"></div>
+        <h2>Past Events</h2>
+        <div class="wrapper" id="past"></div>
 	</article>
 	<footer>
         <h2>Contact<br>Us</h2>
@@ -157,6 +124,44 @@
             @technojam_galgotias</a>
         </div>
     </footer>
+    <script src="js/events.js"></script>
+    <script>
+        function createElem(typ, content, classes, attrib) {
+            var ret = document.createElement(typ);
+            if (classes) {
+                classes.map(c => ret.classList.add(c));
+            }
+            if (attrib) {
+                for (a in attrib) ret.setAttribute(a, attrib[a]);
+            }
+            if (typeof content == 'string') {
+                ret.appendChild(document.createTextNode(content));
+            } else {
+                if (Array.isArray(content)) {
+                    content.map(e => ret.appendChild(e));
+                } else {
+                    ret.appendChild(content);
+                }
+            }
+            return ret;
+        }
+        eventList.map((ev, i) => {
+            var card = createElem('div', createElem('div',
+                [
+                    createElem('h1', ev.name),
+                    createElem('p', 'Date: ' + ev.date.toDateString()),
+                    createElem('p', 'Venue: ' + ev.venue),
+                    createElem('p', ev.info),
+                    createElem('a', 'Photos', [], {'href': './events/' + ev.folder})
+                ], ['wrapper'])
+            , ['card']);
+            if (Date.now() < ev.date.getTime()) {
+                document.getElementById('upcoming').appendChild(card);
+            } else {
+                document.getElementById('past').appendChild(card);
+            }
+        });
+    </script>
     <script src="./js/global.js"></script>
 </body>
 </html> 

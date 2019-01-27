@@ -33,6 +33,7 @@ nav {
     height: 50px;
     transform: translate3d(0, 0, 0); /* for gpu acceleration */
     background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 nav .wrapper {
     text-align: center;
@@ -53,6 +54,7 @@ footer {
     width: calc(100% - 50px);
     padding: 25px;
     background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
 }
 footer h2 {
     font-weight: 100;
