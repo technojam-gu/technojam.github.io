@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 ErrorDocument 404 https://technojam.github.io/404_not_found.html
-=======
-ErrorDocument 404 /404_not_found.html
->>>>>>> db620f0795f614fbfbe5e76130685ff004cda4e6
