@@ -63,7 +63,7 @@
             font-weight: 100;
         }
         .card a {
-            font-size: 20px;
+            font-size: 30px;
         }
         #upcoming .card a {
             display: none;
@@ -122,27 +122,9 @@
             @technojam_galgotias</a>
         </div>
     </footer>
-    <script src="js/events.js"></script>
+    <script id="globalScript" src="./js/global.js"></script>
+    <script id="eventScript" src="js/events.js"></script>
     <script>
-        function createElem(typ, content, classes, attrib) {
-            var ret = document.createElement(typ);
-            if (classes) {
-                classes.map(c => ret.classList.add(c));
-            }
-            if (attrib) {
-                for (a in attrib) ret.setAttribute(a, attrib[a]);
-            }
-            if (typeof content == 'string') {
-                ret.appendChild(document.createTextNode(content));
-            } else {
-                if (Array.isArray(content)) {
-                    content.map(e => ret.appendChild(e));
-                } else {
-                    ret.appendChild(content);
-                }
-            }
-            return ret;
-        }
         function convertToString(json) {
             var st = '';
             for (var a in json) {
@@ -150,24 +132,33 @@
             }
             return st;
         }
-        eventList.map((ev, i) => {
-            var milli = ev.date.getTime();
-            ev.date = ev.date.toDateString();
-            var card = createElem('div', createElem('div',
-                [
-                    createElem('h1', ev.name),
-                    createElem('p', 'Date: ' + ev.date),
-                    createElem('p', 'Venue: ' + ev.venue),
-                    createElem('p', ev.info),
-                    createElem('a', 'View Photos', [], {'href': './gallery.html#' + convertToString(ev)})
-                ], ['wrapper'])
-            , ['card']);
-            if (Date.now() < milli) {
-                document.getElementById('upcoming').appendChild(card);
+        function getEvents() {
+            if (typeof createElem !== 'function') {
+                document.getElementById('globalScript').addEventListener('load', getTeam);
+            } else if (typeof eventList === 'undefined') {
+                document.getElementById('eventScript').addEventListener('load', getTeam);
             } else {
-                document.getElementById('past').appendChild(card);
+                eventList.map((ev, i) => {
+                    var milli = ev.date.getTime();
+                    ev.date = ev.date.toDateString();
+                    var card = createElem('div', createElem('div',
+                        [
+                            createElem('h1', ev.name),
+                            createElem('p', 'Date: ' + ev.date),
+                            createElem('p', 'Venue: ' + ev.venue),
+                            createElem('p', ev.info),
+                            createElem('a', 'View Photos', [], {'href': './gallery.html#' + convertToString(ev)})
+                        ], ['wrapper'])
+                    , ['card']);
+                    if (Date.now() < milli) {
+                        document.getElementById('upcoming').appendChild(card);
+                    } else {
+                        document.getElementById('past').appendChild(card);
+                    }
+                });
             }
-        });
+        }
+        getEvents();
     </script>
     <script src="./js/global.js"></script>
 </body>

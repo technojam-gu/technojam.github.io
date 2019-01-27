@@ -1,13 +1,23 @@
-function setFooter() {
-	var footer = document.getElementsByTagName('footer')[0];
-	footer.style.bottom = 'initial';
-	if (footer.getBoundingClientRect().bottom <= window.outerHeight) {
-		footer.style.bottom = '0';
+function createElem(typ, content, classes, attrib) {
+	var ret = document.createElement(typ);
+	if (classes) {
+		classes.map(c => ret.classList.add(c));
 	}
-}
-setFooter();
-window.onresize = function () {
-	setFooter();
+	if (attrib) {
+		for (a in attrib) ret.setAttribute(a, attrib[a]);
+	}
+	if (content) {
+		if (typeof content == 'string') {
+			ret.appendChild(document.createTextNode(content));
+		} else {
+			if (Array.isArray(content)) {
+				content.map(e => ret.appendChild(e));
+			} else {
+				ret.appendChild(content);
+			}
+		}
+	}
+	return ret;
 }
 const gebi=id=>document.getElementById(id)
 function navigator_menu(e){

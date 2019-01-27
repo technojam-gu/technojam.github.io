@@ -95,52 +95,7 @@
     <article>
         <h1>The <img src="./images/logo.png" alt="TechnoJam"> Team</h1>
         <p>Meet the team of TechnoJam, which makes all the technical events happening in Galgotias University possible.</p>
-        <div class="wrapper">
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Kaustubh Rai</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Honey Sharma</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Darshan Baid</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-            <div class="card">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="./images/logo.png" alt="Profile Picture">
-                        <h1>Swetank</h1>
-                    </div>
-                    <a>Email</a><br>
-                    <a>Github Link</a><br>
-                    <a>LinkedIn Link</a><br>
-                </div>
-            </div>
-        </div>
+        <div class="wrapper"></div>
 	</article>
 	<footer>
         <h2>Contact<br>Us</h2>
@@ -157,6 +112,33 @@
             @technojam_galgotias</a>
         </div>
     </footer>
-    <script src="./js/global.js"></script>
+    <script id="globalScript" src="./js/global.js"></script>
+    <script id="teamScript" src="./js/team.js"></script>
+    <script>
+        function getTeam() {
+            if (typeof createElem !== 'function') {
+                document.getElementById('globalScript').addEventListener('load', getTeam);
+            } else if (typeof teamList === 'undefined') {
+                document.getElementById('teamScript').addEventListener('load', getTeam);
+            } else {
+                var outerWrapper = document.querySelector('article > .wrapper');
+                for (var i = 0; i < teamList.length; i++) {
+                    var profile  = createElem('div', [createElem('img', null, [], {
+                        'src': teamList[i].photo,
+                        'alt':'Profile Picture',
+                    }), createElem('h1', teamList[i].name)], ['profile']);
+                    outerWrapper.appendChild(createElem('div', createElem('div',[
+                        profile,
+                        createElem('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
+                        createElem('br'),
+                        createElem('a', 'GitHub Link', [], {'href': teamList[i].github}),
+                        createElem('br'),
+                        createElem('a', 'LinkedIn Link', [], {'href': teamList[i].linkedin})
+                    ] ,['wrapper']), ['card']));
+                }
+            }
+        }
+        getTeam();
+    </script>
 </body>
 </html> 
