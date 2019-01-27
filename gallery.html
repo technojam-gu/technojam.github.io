@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photos | Team TechnoJam | Galgotias University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="All the upcoming as well as all the previously conducted events by the TechnoJam team at Galgotias Univesity."/>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#603cba">
+    <meta name="apple-mobile-web-app-title" content="TechnoJam">
+    <meta name="application-name" content="TechnoJam">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        article {
+            text-align: center;
+        }
+        article .container {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 50px auto;
+        }
+        h1 {
+            color: rgb(117, 45, 134);
+            font-size: 50px;
+            font-weight: 100;
+        }
+        article > .wrapper {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+        }
+        article > .wrapper a img {
+            max-width: 20vw;
+        }
+        footer {
+            bottom: initial !important;
+        }
+        @media screen and (max-width: 1400px) {
+            article > .wrapper {
+                grid-template-columns: auto auto auto auto;
+            }
+            article > .wrapper a img {
+                max-width: 25vw;
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            article > .wrapper {
+                grid-template-columns: auto auto auto;
+            }
+            article > .wrapper a img {
+                max-width: 33vw;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            article > .wrapper {
+                grid-template-columns: auto auto;
+            }
+            article > .wrapper a img {
+                max-width: 50vw;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            article > .wrapper {
+                grid-template-columns: auto;
+            }
+            article > .wrapper a img {
+                max-width: 100vw;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+<body>
+    <nav>
+       <a href="./index.html" class="wrapper"><img src="./images/logo.png" alt="TechnoJam Logo"></a>
+       <a href="./about.html" class="wrapper"><span>About</span></a>
+       <a href="./events.html" class="wrapper"><span>Events</span></a>
+       <a href="./team.html" class="wrapper"><span>Team</span></a>
+       <a href="./alumni.html" class="wrapper"><span>Alumni</span></a>
+    </nav>
+    <article>
+        <h1 id="name"></h1>
+        <div class="container">
+            <p id="info"></p>
+            Happened on <span id="date"></span> at <span id="venue"></span>
+        </div>
+        <div class="wrapper">
+
+        </div>
+    </article>
+    <footer>
+        <h2>Contact<br>Us</h2>
+        <div class="wrapper">
+            <img src="./images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
+            techno<span>jam@galgotiasun</span>iversity.edu.in</a>
+        </div>
+        <div class="wrapper">
+            <img src="./images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            @technojam.scse</a>
+        </div>
+        <div class="wrapper">
+            <img src="./images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            @technojam_galgotias</a>
+        </div>
+    </footer>
+    <script>
+        var event = {};
+        function getInfo() {
+            var info = document.location.href.split('#', 2)[1];
+            console.log(info);
+            if (info) {
+                var arr = info.split('&');
+                for (var i = 0; i < arr.length; i++) {
+                    var entry = arr[i].split('=');
+                    event[decodeURIComponent(entry[0])] = decodeURIComponent(entry[1]);
+                }
+            }
+        }
+        function setInfo(name) {
+            var elem = document.getElementById(name);
+            if (elem) elem.innerHTML = event[name];
+        }
+        getInfo();
+        for (var x in event) setInfo(x);
+        document.title = event.name + ' | Team TechnoJam | Galgotias University';
+
+        var wrapper = document.querySelector('article > .wrapper');
+        for (var i = 1; i <= event.numberOfPhotos; i++) {
+            var img = document.createElement('img');
+            var a = document.createElement('a');
+            var link = './events/' + event.folder + '/' + String(i) + '.png';
+            img.src = link;
+            a.href = link;
+            a.appendChild(img);
+            wrapper.appendChild(a);
+        }
+    </script>
+    <script src="./js/global.js"></script>
+</body>
+</html>

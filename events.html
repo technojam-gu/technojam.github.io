@@ -58,20 +58,18 @@
         .card p, .card a {
             text-align: center;
         }
-        .profile {
-            display: flex;
-            position: relative;
-        }
-        .profile img {
-            height: 30px;
-            border-radius: 50%;
-        }
-        .profile h1, .profile img {
-            margin: 15px 0 35px 0;
-        }
-        .profile h1 {
+        .card h1 {
             font-size: 30px;
             font-weight: 100;
+        }
+        .card a {
+            font-size: 20px;
+        }
+        #upcoming .card a {
+            display: none;
+        }
+        .card p {
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -145,17 +143,26 @@
             }
             return ret;
         }
+        function convertToString(json) {
+            var st = '';
+            for (var a in json) {
+                st += (encodeURIComponent(a) + '=' + encodeURIComponent(json[a]) + "&");
+            }
+            return st;
+        }
         eventList.map((ev, i) => {
+            var milli = ev.date.getTime();
+            ev.date = ev.date.toDateString();
             var card = createElem('div', createElem('div',
                 [
                     createElem('h1', ev.name),
-                    createElem('p', 'Date: ' + ev.date.toDateString()),
+                    createElem('p', 'Date: ' + ev.date),
                     createElem('p', 'Venue: ' + ev.venue),
                     createElem('p', ev.info),
-                    createElem('a', 'Photos', [], {'href': './events/' + ev.folder})
+                    createElem('a', 'View Photos', [], {'href': './gallery.html#' + convertToString(ev)})
                 ], ['wrapper'])
             , ['card']);
-            if (Date.now() < ev.date.getTime()) {
+            if (Date.now() < milli) {
                 document.getElementById('upcoming').appendChild(card);
             } else {
                 document.getElementById('past').appendChild(card);
