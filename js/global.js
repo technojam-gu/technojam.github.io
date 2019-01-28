@@ -27,8 +27,6 @@ function createElem(typ, content, classes, attrib) {
 }
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function() {
-	  	navigator.serviceWorker.register('/js/serviceWorker.js', {
-			scope: '/'
-		});
+	  	navigator.serviceWorker.register('/js/serviceWorker.js');
 	});
 }
