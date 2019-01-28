@@ -1,22 +1,22 @@
-var CACHE_NAME = 'tj-cache-v1.0';
+var CACHE_NAME = 'tj-cache-v1.1';
 var urlsToCache = [
     '/',
+    '/events.html',
+    '/gallery.html',
+    '/team.html',
+    '/404.html',
     '/css/global.css',
     '/js/global.js',
+    '/js/team.js',
     '/images/logo.png',
     '/images/social/facebook.png',
     '/images/social/instagram.png',
     '/images/social/mail.png',
     '/images/index/logo.png',
-    '/team.html',
-    '/js/team.js',
     '/images/team/github.png',
     '/images/team/linkedin.png',
-    '/events.html',
-    '/gallery.html',
     '/images/gallery/close.png',
-    '/images/gallery/next.png',
-    '/events.html'
+    '/images/gallery/next.png'
 ];
 self.addEventListener('install', function(event) {
     event.waitUntil(
