@@ -92,3 +92,13 @@ article {
     margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
     overflow-x: hidden;
 }
+@media screen and (max-width: 700px) {
+    footer {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    footer .wrapper {
+        margin-left: 10px;
+    }
+}

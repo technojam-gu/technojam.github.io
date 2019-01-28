@@ -1,3 +1,9 @@
+const gebi=id=>document.getElementById(id)
+function navigator_menu(e){
+	gebi('navs').classList.toggle('show')
+	console.log('I\'m clicked')
+}
+if (gebi('logo')) gebi('logo').addEventListener('click',navigator_menu)
 function createElem(typ, content, classes, attrib) {
 	var ret = document.createElement(typ);
 	if (classes) {
@@ -19,9 +25,8 @@ function createElem(typ, content, classes, attrib) {
 	}
 	return ret;
 }
-const gebi=id=>document.getElementById(id)
-function navigator_menu(e){
-	gebi('navs').classList.toggle('show')
-	console.log('I\'m clicked')
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+	  	navigator.serviceWorker.register('./js/serviceWorker.js');
+	});
 }
-gebi('logo').addEventListener('click',navigator_menu)
