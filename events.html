@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Events | Team TechnoJam | Galgotias University</title>
@@ -9,11 +9,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./manifest.json">
-    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#603cba">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#58cfe8">
     <meta name="apple-mobile-web-app-title" content="TechnoJam">
     <meta name="application-name" content="TechnoJam">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#58cfe8">
+    <meta name="theme-color" content="#58cfe8">
     <style>
         h1 {
             color: rgb(117, 45, 134);
@@ -61,17 +61,29 @@
         .card h1 {
             font-size: 30px;
             font-weight: 100;
+            margin-bottom: 10px;
         }
         .card a {
             font-size: 30px;
+            padding: 10px;
+            background-color: rgba(91, 212, 228, 0.2);
+            border-radius: 5px;
+            margin-top: 10px;
         }
         #upcoming .card a {
             display: none;
         }
         .card p {
+            color: grey;
             max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 40px auto 20px auto;
+            font-size: 20px;
+        }
+        .card .loc {
+            color: black;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
         @media screen and (max-width: 1400px) {
             article > .wrapper {
@@ -108,7 +120,7 @@
         <div class="wrapper" id="past"></div>
 	</article>
 	<footer>
-        <h2>Contact<br>Us</h2>
+        <h2>Contact Us</h2>
         <div class="wrapper">
             <img src="./images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
             techno<span>jam@galgotiasun</span>iversity.edu.in</a>
@@ -144,8 +156,7 @@
                     var card = createElem('div', createElem('div',
                         [
                             createElem('h1', ev.name),
-                            createElem('p', 'Date: ' + ev.date),
-                            createElem('p', 'Venue: ' + ev.venue),
+                            createElem('p', 'On ' + ev.date + '; at ' + ev.venue, ['loc']),
                             createElem('p', ev.info),
                             createElem('a', 'View Photos', [], {'href': './gallery.html#' + convertToString(ev)})
                         ], ['wrapper'])

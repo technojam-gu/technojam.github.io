@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300');
 :root{
 	--body-bg: #fff;
 	--text-primary-color: #ddd;
@@ -58,18 +58,35 @@ footer {
 }
 footer h2 {
     font-weight: 100;
-    font-size: 30px;
+    font-size: 25px;
     margin: 0;
     text-align: center;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;    
 }
 footer .wrapper {
     margin: 10px;
     margin-left: 30px;
+    font-size: 18px;
+    float: left;
+    height: 20px;
 }
 footer .wrapper img {
     height: 20px;
     margin-right: 10px;
+    float: left;
+}
+footer .wrapper:nth-child(2) a {
+    color: rgb(255, 150, 150);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+footer .wrapper:nth-child(3) a {
+    color: rgb(150, 150, 255);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+footer .wrapper:nth-child(4) a {
+    color: rgb(255, 150, 255);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 article {
     margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
