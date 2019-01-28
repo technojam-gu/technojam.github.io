@@ -80,14 +80,15 @@
         .change {
             position: fixed;
             top: 50%;
-            transform: translate(0, -50%);
             z-index: 32;
         }
         #next {
             right: 0;
+            transform: translate(0, -50%);
         }
         #prev {
             left: 0;
+            transform: translate(0, -50%) rotate(180deg);
         }
         footer {
             bottom: initial !important;
@@ -129,7 +130,7 @@
 </head>
 <body>
     <nav>
-       <a href="/index.html" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
+       <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
        <a href="/about.html" class="wrapper"><span>About</span></a>
        <a href="/events.html" class="wrapper"><span>Events</span></a>
        <a href="/team.html" class="wrapper"><span>Team</span></a>
@@ -147,7 +148,7 @@
     </article>
     <div id="cover" onclick="closeCover(event)">
         <img src="/images/gallery/close.png" id="close" onclick="closeCover(event)">
-        <img src="/images/gallery/prev.png" id="prev" class="change" onclick="prevImage()">
+        <img src="/images/gallery/next.png" id="prev" class="change" onclick="prevImage()">
         <img src="/images/gallery/next.png" id="next" class="change" onclick="nextImage()">
         <img id="coverImage" src="" alt="Full Screen">
     </div>
