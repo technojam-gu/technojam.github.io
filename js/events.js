@@ -3,7 +3,7 @@ var eventList = [{
     date: new Date(2018, 11, 10, 8, 0, 0, 0),
     venue: 'C-Block, Galgotias Univesity',
     info: 'The first ever Hackathon of GU',
-    folder: 'dex1', // this folder should be inside ./events/ and should contain all the photos
+    folder: 'dex1', // this folder should be inside /events/ and should contain all the photos
     numberOfPhotos: 5
 }, {
     name: 'Dexterix Hackathon 2.0',

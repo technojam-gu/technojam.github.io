@@ -1,12 +1,12 @@
 var CACHE_NAME = 'tj-v1.0';
 var urlsToCache = [
-    './index.html',
-    './css/global.css',
-    './js/global.js',
-    './team.html',
-    './js/team.js',
-    './events.html',
-    './gallery.html',
+    '/index.html',
+    '/css/global.css',
+    '/js/global.js',
+    '/team.html',
+    '/js/team.js',
+    '/events.html',
+    '/gallery.html',
 ];
 
 self.addEventListener('install', function(event) {

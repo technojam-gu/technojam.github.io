@@ -5,11 +5,11 @@
     <title>Meet the Team | Team TechnoJam | Galgotias University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Meet the team of TechnoJam, which makes all the technical events happening in Galgotias University possible."/>
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./manifest.json">
-    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#58cfe8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#58cfe8">
     <meta name="apple-mobile-web-app-title" content="TechnoJam">
     <meta name="application-name" content="TechnoJam">
     <meta name="msapplication-TileColor" content="#58cfe8">
@@ -89,38 +89,38 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
     <nav>
-       <a href="./index.html" class="wrapper"><img src="./images/logo.png" alt="TechnoJam Logo"></a>
-       <a href="./about.html" class="wrapper"><span>About</span></a>
-       <a href="./events.html" class="wrapper"><span>Events</span></a>
-       <a href="./team.html" class="wrapper"><span>Team</span></a>
-       <a href="./alumni.html" class="wrapper"><span>Alumni</span></a>
+       <a href="/index.html" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
+       <a href="/about.html" class="wrapper"><span>About</span></a>
+       <a href="/events.html" class="wrapper"><span>Events</span></a>
+       <a href="/team.html" class="wrapper"><span>Team</span></a>
+       <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
     </nav>
     <article>
-        <h1>The <img src="./images/logo.png" alt="TechnoJam"> Team</h1>
+        <h1>The <img src="/images/logo.png" alt="TechnoJam"> Team</h1>
         <p>Meet the team of TechnoJam, which makes all the technical events happening in Galgotias University possible.</p>
         <div class="wrapper"></div>
 	</article>
 	<footer>
         <h2>Contact Us</h2>
         <div class="wrapper">
-            <img src="./images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
             techno<span>jam@galgotiasun</span>iversity.edu.in</a>
         </div>
         <div class="wrapper">
-            <img src="./images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
             @technojam.scse</a>
         </div>
         <div class="wrapper">
-            <img src="./images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
             @technojam_galgotias</a>
         </div>
     </footer>
-    <script id="globalScript" src="./js/global.js"></script>
-    <script id="teamScript" src="./js/team.js"></script>
+    <script id="globalScript" src="/js/global.js"></script>
+    <script id="teamScript" src="/js/team.js"></script>
     <script>
         function getTeam() {
             if (typeof createElem !== 'function') {
@@ -138,8 +138,8 @@
                         profile,
                         createElem('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
                         createElem('br'),
-                        createElem('a', createElem('img', null, [], {'src': './images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
-                        createElem('a', createElem('img', null, [], {'src': './images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
+                        createElem('a', createElem('img', null, [], {'src': '/images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
+                        createElem('a', createElem('img', null, [], {'src': '/images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
                     ] ,['wrapper']), ['card']));
                 }
             }

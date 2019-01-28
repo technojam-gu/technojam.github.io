@@ -5,11 +5,11 @@
     <title>Events | Team TechnoJam | Galgotias University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="All the upcoming as well as all the previously conducted events by the TechnoJam team at Galgotias Univesity."/>
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./manifest.json">
-    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#58cfe8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#58cfe8">
     <meta name="apple-mobile-web-app-title" content="TechnoJam">
     <meta name="application-name" content="TechnoJam">
     <meta name="msapplication-TileColor" content="#58cfe8">
@@ -101,18 +101,18 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
     <nav>
-       <a href="./index.html" class="wrapper"><img src="./images/logo.png" alt="TechnoJam Logo"></a>
-       <a href="./about.html" class="wrapper"><span>About</span></a>
-       <a href="./events.html" class="wrapper"><span>Events</span></a>
-       <a href="./team.html" class="wrapper"><span>Team</span></a>
-       <a href="./alumni.html" class="wrapper"><span>Alumni</span></a>
+       <a href="/index.html" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
+       <a href="/about.html" class="wrapper"><span>About</span></a>
+       <a href="/events.html" class="wrapper"><span>Events</span></a>
+       <a href="/team.html" class="wrapper"><span>Team</span></a>
+       <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
     </nav>
     <article>
-        <h1><img src="./images/logo.png" alt="TechnoJam"> Events</h1>
+        <h1><img src="/images/logo.png" alt="TechnoJam"> Events</h1>
         <p>Here are all the upcoming as well as all the previously conducted events by the TechnoJam team.</p>
         <h2>Upcoming Events</h2>
         <div class="wrapper" id="upcoming"></div>
@@ -122,19 +122,19 @@
 	<footer>
         <h2>Contact Us</h2>
         <div class="wrapper">
-            <img src="./images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
             techno<span>jam@galgotiasun</span>iversity.edu.in</a>
         </div>
         <div class="wrapper">
-            <img src="./images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
             @technojam.scse</a>
         </div>
         <div class="wrapper">
-            <img src="./images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
             @technojam_galgotias</a>
         </div>
     </footer>
-    <script id="globalScript" src="./js/global.js"></script>
+    <script id="globalScript" src="/js/global.js"></script>
     <script id="eventScript" src="js/events.js"></script>
     <script>
         function convertToString(json) {
@@ -158,7 +158,7 @@
                             createElem('h1', ev.name),
                             createElem('p', 'On ' + ev.date + '; at ' + ev.venue, ['loc']),
                             createElem('p', ev.info),
-                            createElem('a', 'View Photos', [], {'href': './gallery.html#' + convertToString(ev)})
+                            createElem('a', 'View Photos', [], {'href': '/gallery.html#' + convertToString(ev)})
                         ], ['wrapper'])
                     , ['card']);
                     if (Date.now() < milli) {
@@ -171,6 +171,5 @@
         }
         getEvents();
     </script>
-    <script src="./js/global.js"></script>
 </body>
 </html> 
