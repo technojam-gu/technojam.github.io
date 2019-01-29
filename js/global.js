@@ -4,6 +4,20 @@ function navigator_menu(e){
 	console.log('I\'m clicked')
 }
 if (gebi('logo')) gebi('logo').addEventListener('click',navigator_menu)
+
+function handleFooterPos() {
+	function tagHeight(s) {
+		return document.getElementsByTagName(s)[0].getBoundingClientRect().height;
+	}
+	if ((tagHeight('article') + tagHeight('footer') + 70) < window.innerHeight) { // article margin
+		document.getElementsByTagName('footer')[0].style.bottom = '0';
+	} else {
+		document.getElementsByTagName('footer')[0].style.bottom = null;
+	}
+}
+handleFooterPos();
+window.addEventListener('resize', handleFooterPos);
+
 function createElem(typ, content, classes, attrib) {
 	var ret = document.createElement(typ);
 	if (classes) {

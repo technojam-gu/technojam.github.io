@@ -23,6 +23,9 @@
             max-width: 500px;
             margin: 0 auto 50px auto;
         }
+        article .container {
+            padding: 0 20px;
+        }
         h1 {
             color: rgb(117, 45, 134);
             font-size: 50px;
@@ -31,10 +34,10 @@
         article > .wrapper {
             width: 100%;
             display: grid;
-            grid-template-columns: auto auto auto auto auto;
+            grid-template-columns: auto auto auto auto;
         }
         article > .wrapper img {
-            max-width: 20vw;
+            max-width: 25vw;
             cursor: pointer;
         }
         #cover {
@@ -92,14 +95,6 @@
         }
         footer {
             bottom: initial !important;
-        }
-        @media screen and (max-width: 1400px) {
-            article > .wrapper {
-                grid-template-columns: auto auto auto auto;
-            }
-            article > .wrapper a img {
-                max-width: 25vw;
-            }
         }
         @media screen and (max-width: 1000px) {
             article > .wrapper {

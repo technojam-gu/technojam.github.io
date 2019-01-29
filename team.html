@@ -36,7 +36,7 @@
         }
         article > .wrapper {
             display: grid;
-            grid-template-columns: auto auto auto auto;
+            grid-template-columns: auto auto auto;
             grid-gap: 50px;
         }
         .card {
@@ -72,11 +72,6 @@
         .card .wrapper a img {
             margin: 20px;
             height: 40px;
-        }
-        @media screen and (max-width: 1400px) {
-            article > .wrapper {
-                grid-template-columns: auto auto auto;
-            }
         }
         @media screen and (max-width: 1000px) {
             article > .wrapper {
@@ -143,6 +138,7 @@
                     ] ,['wrapper']), ['card']));
                 }
             }
+            handleFooterPos();
         }
         getTeam();
     </script>
