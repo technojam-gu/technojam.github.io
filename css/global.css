@@ -3,7 +3,7 @@
 	--body-bg: #fff;
 	--text-primary-color: #ddd;
 	--text-secondary-color: #444;
-	--primary-background: linear-gradient(rgba(223, 90, 71,0.9),rgba(204, 81, 131,0.9));
+	--primary-background: linear-gradient(#fb4d08 25%,#da1984);
 	--primary-background-fallback: #dc4c50;
 	--secondary-background-fallback: rgba(80, 158, 211,0.85);
 }
@@ -21,6 +21,7 @@ body {
 	background: transparent;
 	text-align: center;
 	vertical-align: middle;
+	z-index: 999;
 }
 nav {
     transform: translate3d(0, 0, 0);  /*for gpu acceleration*/
@@ -63,7 +64,7 @@ nav {
 	height: 6.53em;
 	box-shadow: 1px 4px 6px 2px #00000033;
 }
-.navs>a, .navs>a:visited{
+.navs a, .navs a:visited{
 	margin: 0;
 	z-index: 100;
 	background: rgba(255,255,255,0.909);
