@@ -22,7 +22,7 @@ class CarouselManager{
 			this.paginations=Array.from(this.paginations[0].childNodes[1].childNodes).filter(e=>{
 				if(e.classList){
 					if(e.classList.contains('dot')){
-						e.setAttribute('aria-label',paginaton_counter++)
+						e.setAttribute('data-index',paginaton_counter++)
 						return true
 					}
 				}
@@ -41,7 +41,7 @@ class CarouselManager{
 			const random=ev=>{
 				this.pause()
 				this.toggler(this.elements[this.curr],this.paginations[this.curr])
-				this.curr=element.getAttribute('aria-label')
+				this.curr=element.getAttribute('data-index')
 				this.toggler(this.elements[this.curr],this.paginations[this.curr])
 			}
 			element.onclick=random
@@ -50,7 +50,7 @@ class CarouselManager{
 		const __internal_step=async timestamp=>{
 			if(!this.delta)
 				this.delta=timestamp
-			await wait(this.delay)
+				await wait(this.delay)
 			if(this.play_state==1){
 				this.toggler(this.elements[this.curr],this.paginations[this.curr])
 				this.curr++;this.curr%=this.elements.length
