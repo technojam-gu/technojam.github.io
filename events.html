@@ -53,7 +53,7 @@
             min-height: 200px;
         }
         .card > .wrapper {
-            margin: 20px;
+            margin: 40px;
         }
         .card p, .card a {
             text-align: center;
@@ -64,11 +64,11 @@
             margin-bottom: 10px;
         }
         .card a {
-            font-size: 30px;
+            font-size: 25px;
             padding: 10px;
-            background-color: rgba(91, 212, 228, 0.2);
+            color: rgb(117, 45, 134);
+            background-color: rgba(117, 45, 134, 0.1);
             border-radius: 5px;
-            margin-top: 10px;
         }
         #upcoming .card a {
             display: none;
@@ -76,14 +76,31 @@
         .card p {
             color: grey;
             max-width: 500px;
-            margin: 40px auto 20px auto;
+            margin: 20px auto 20px auto;
             font-size: 20px;
         }
         .card .loc {
             color: black;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin: 40px auto;
             font-size: 16px;
+            display: flex;
+        }
+        .card .loc span {
+            margin: 0 auto;
+        }
+        .card hr {
+            background-color: rgb(220, 220, 220);
+            border: 0;
+        }
+        .card .loc hr {
+            height: 16px;
+            width: 1px;
+            margin: 0 20px;
+        }
+        .card .wrapper > hr {
+            height: 1px;
+            width: 100%;
+            margin: 40px 0;
         }
         @media screen and (max-width: 1400px) {
             article > .wrapper {
@@ -121,18 +138,15 @@
 	</article>
 	<footer>
         <h2>Contact Us</h2>
-        <div class="wrapper">
-            <img src="/images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
-            techno<span>jam@galgotiasun</span>iversity.edu.in</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
-            @technojam.scse</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
-            @technojam_galgotias</a>
-        </div>
+        <a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon">techno<span>jam@galgotiasun</span>iversity.edu.in
+        </a>
+        <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon">@technojam.scse
+        </a>
+        <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
+        </a>
     </footer>
     <script id="globalScript" src="/js/global.js"></script>
     <script id="eventScript" src="js/events.js"></script>
@@ -156,7 +170,12 @@
                     var card = createElem('div', createElem('div',
                         [
                             createElem('h1', ev.name),
-                            createElem('p', 'On ' + ev.date + '; at ' + ev.venue, ['loc']),
+                            createElem('p', [
+                                createElem('span', ev.date.toString()),
+                                createElem('hr'),
+                                createElem('span', ev.venue.toString()),
+                            ], ['loc']),
+                            createElem('hr'),
                             createElem('p', ev.info),
                             createElem('a', 'View Photos', [], {'href': '/gallery.html#' + convertToString(ev)})
                         ], ['wrapper'])

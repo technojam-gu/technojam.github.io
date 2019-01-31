@@ -64,29 +64,28 @@ footer h2 {
     letter-spacing: 5px;
     text-transform: uppercase;    
 }
-footer .wrapper {
+footer a {
     margin: 10px;
     margin-left: 30px;
-    font-size: 18px;
     float: left;
+    font-size: 20px;
     height: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
-footer .wrapper img {
+footer img {
     height: 20px;
     margin-right: 10px;
+    margin-top: 3px;
     float: left;
 }
-footer .wrapper:nth-child(2) a {
+footer a:nth-child(2) {
     color: rgb(255, 150, 150);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
-footer .wrapper:nth-child(3) a {
+footer a:nth-child(3) {
     color: rgb(150, 150, 255);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
-footer .wrapper:nth-child(4) a {
+footer a:nth-child(4) {
     color: rgb(255, 150, 255);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 article {
     margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
@@ -95,13 +94,17 @@ article {
     margin-left: auto;
     margin-right: auto;
 }
+article h1 img {
+    position: relative;
+    transform: translate(0, 8px);
+}
 @media screen and (max-width: 700px) {
     footer {
         width: 100%;
         padding-left: 0;
         padding-right: 0;
     }
-    footer .wrapper {
+    footer a {
         margin-left: 10px;
     }
 }
