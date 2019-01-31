@@ -1,19 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300');
 :root{
 	--body-bg: #fff;
 	--text-primary-color: #ddd;
 	--text-secondary-color: #444;
 	--primary-background: linear-gradient(#fb4d08 25%,#da1984);
 	--primary-background-fallback: #dc4c50;
-	--secondary-background-fallback: rgba(80, 158, 211,0.85);
+    --secondary-background-fallback: rgba(80, 158, 211,0.85);
 }
 body {
 	font-family: 'Work Sans', sans-serif;
 	margin: 0;
-	padding: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: linear-gradient(rgb(91, 212, 228), rgb(243, 62, 128));
+    background-attachment: fixed;
+    color: white;
 }
-.global-header{
-	position: fixed;
+a {
+    font-weight: 300;
+    color: rgb(91, 212, 228);
+    text-decoration: none;
+}
+nav {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 50px;
+    z-index: 20;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -95,4 +108,82 @@ h2.contact{
 	width: fit-content;
 	margin: auto;
 	word-spacing: 100vw;
+    width: 100vw;
+    height: 50px;
+    transform: translate3d(0, 0, 0); /* for gpu acceleration */
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+nav .wrapper {
+    text-align: center;
+    cursor: pointer;
+}
+nav .wrapper span {
+    position: relative;
+    top: 25%;
+    text-transform: uppercase;
+    transition: text-shadow 0.5s;
+}
+nav .wrapper:hover span, nav .wrapper:focus span {
+    text-shadow: 0 0 5px rgb(81, 203, 235);
+}
+footer {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 50px);
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+}
+footer h2 {
+    font-weight: 100;
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;    
+}
+footer a {
+    margin: 10px;
+    margin-left: 30px;
+    float: left;
+    font-size: 20px;
+    height: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+footer img {
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 3px;
+    float: left;
+}
+footer a:nth-child(2) {
+    color: rgb(255, 150, 150);
+}
+footer a:nth-child(3) {
+    color: rgb(150, 150, 255);
+}
+footer a:nth-child(4) {
+    color: rgb(255, 150, 255);
+}
+article {
+    margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
+    overflow-x: hidden;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+article h1 img {
+    position: relative;
+    transform: translate(0, 8px);
+}
+@media screen and (max-width: 700px) {
+    footer {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    footer a {
+        margin-left: 10px;
+    }
 }

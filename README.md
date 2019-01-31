@@ -1,12 +1,44 @@
 # TechnoJam Website
+
 This repository contains the source code for the official website of TechnoJam.
 
 ### Pages the website will contain:
-- Index
-- Contact
-- About
-- Team
-- Events
 
-### Suggestions
-Any kind of suggestions are welcome, so if you notice a bug or any other problem, just open up an issue (recommended) or contact us directly.
+- Index
+- About
+- Events
+- Team
+- Alumni
+
+### Directory Structure
+
+```bash
+
+Repo
+|----images/
+|     |----svg/
+|     |     |----svg-files
+|     |
+|     |----events/
+|     |     |----image-files
+|     |
+|     |----common-image-files
+|
+|----css/
+|     |----css-files
+|
+|----js/
+|     |----js-files
+|
+|----index.html
+|----about.html
+|----team.html
+|----alumni.html
+|----events.html
+```
+
+=> events.html contains previous event names, details and photos.
+
+### Contributing to This Repo
+
+[CONTRIBUTING.md](./CONTRIBUTING.md)
