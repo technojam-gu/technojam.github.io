@@ -1,9 +1,9 @@
 body{
-	background-color: var(--body-bg);
+	background: black;
 }
 .carousel{
 	display: inline-flex;
-	height: 98vh;
+	height: 100vh;
 	margin: 0;
 	overflow: hidden;
 	max-width: 100vw;
@@ -81,8 +81,9 @@ body{
 .hero-headings{
 	font-weight: 700;
 	color: #fff;
-	padding-top: 1em;
+	padding-top: 70px;
 	font-size: 250%;
+	margin-top: 0;
 }
 .overflowing-card{
 	width: 70vw;

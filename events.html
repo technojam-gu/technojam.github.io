@@ -161,9 +161,9 @@
         function getEvents() {
             // crEl == create element.
             if (typeof crEl !== 'function') {
-                document.getElementById('globalScript').addEventListener('load', getTeam);
+                document.getElementById('globalScript').addEventListener('load', getEvents);
             } else if (typeof eventList === 'undefined') {
-                document.getElementById('eventScript').addEventListener('load', getTeam);
+                document.getElementById('eventScript').addEventListener('load', getEvents);
             } else {
                 eventList.map((ev, i) => {
                     var milli = ev.date.getTime();
