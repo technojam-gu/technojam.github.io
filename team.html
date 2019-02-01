@@ -118,23 +118,23 @@
     <script id="teamScript" src="/js/team.js"></script>
     <script>
         function getTeam() {
-            if (typeof createElem !== 'function') {
+            if (typeof crEl !== 'function') {
                 document.getElementById('globalScript').addEventListener('load', getTeam);
             } else if (typeof teamList === 'undefined') {
                 document.getElementById('teamScript').addEventListener('load', getTeam);
             } else {
                 var outerWrapper = document.querySelector('article > .wrapper');
                 for (var i = 0; i < teamList.length; i++) {
-                    var profile  = createElem('div', [createElem('img', null, [], {
+                    var profile  = crEl('div', [crEl('img', null, [], {
                         'src': teamList[i].photo,
                         'alt':'Profile Picture',
-                    }), createElem('h1', teamList[i].name)], ['profile']);
-                    outerWrapper.appendChild(createElem('div', createElem('div',[
+                    }), crEl('h1', teamList[i].name)], ['profile']);
+                    outerWrapper.appendChild(crEl('div', crEl('div',[
                         profile,
-                        createElem('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
-                        createElem('br'),
-                        createElem('a', createElem('img', null, [], {'src': '/images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
-                        createElem('a', createElem('img', null, [], {'src': '/images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
+                        crEl('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
+                        crEl('br'),
+                        crEl('a', crEl('img', null, [], {'src': '/images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
+                        crEl('a', crEl('img', null, [], {'src': '/images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
                     ] ,['wrapper']), ['card']));
                 }
             }

@@ -93,7 +93,7 @@
             border: 0;
         }
         .card .loc hr {
-            height: 16px;
+            height: auto;
             width: 1px;
             margin: 0 20px;
         }
@@ -159,7 +159,8 @@
             return st;
         }
         function getEvents() {
-            if (typeof createElem !== 'function') {
+            // crEl == create element.
+            if (typeof crEl !== 'function') {
                 document.getElementById('globalScript').addEventListener('load', getTeam);
             } else if (typeof eventList === 'undefined') {
                 document.getElementById('eventScript').addEventListener('load', getTeam);
@@ -167,17 +168,17 @@
                 eventList.map((ev, i) => {
                     var milli = ev.date.getTime();
                     ev.date = ev.date.toDateString();
-                    var card = createElem('div', createElem('div',
+                    var card = crEl('div', crEl('div',
                         [
-                            createElem('h1', ev.name),
-                            createElem('p', [
-                                createElem('span', ev.date.toString()),
-                                createElem('hr'),
-                                createElem('span', ev.venue.toString()),
+                            crEl('h1', ev.name),
+                            crEl('p', [
+                                crEl('span', ev.date.toString()),
+                                crEl('hr'),
+                                crEl('span', ev.venue.toString()),
                             ], ['loc']),
-                            createElem('hr'),
-                            createElem('p', ev.info),
-                            createElem('a', 'View Photos', [], {'href': '/gallery.html#' + convertToString(ev)})
+                            crEl('hr'),
+                            crEl('p', ev.info),
+                            crEl('a', 'View Photos', [], {'href': '/gallery.html#' + convertToString(ev)})
                         ], ['wrapper'])
                     , ['card']);
                     if (Date.now() < milli) {

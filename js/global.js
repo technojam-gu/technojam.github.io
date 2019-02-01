@@ -18,7 +18,7 @@ function handleFooterPos() {
 handleFooterPos();
 window.addEventListener('resize', handleFooterPos);
 
-function createElem(typ, content, classes, attrib) {
+function crEl(typ, content, classes, attrib) {
 	var ret = document.createElement(typ);
 	if (classes) {
 		classes.map(c => ret.classList.add(c));
