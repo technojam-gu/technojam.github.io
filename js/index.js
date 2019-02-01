@@ -18,11 +18,11 @@ class CarouselManager{
 				}
 				return false
 			})
-			let paginaton_counter=0
+			let pagination_counter=0
 			this.paginations=Array.from(this.paginations[0].childNodes[1].childNodes).filter(e=>{
 				if(e.classList){
 					if(e.classList.contains('dot')){
-						e.setAttribute('data-index',paginaton_counter++)
+						e.setAttribute('data-index',pagination_counter++)
 						return true
 					}
 				}
@@ -33,7 +33,7 @@ class CarouselManager{
 			this.delay=delay
 			this.toggler=toggler_func
 			this.play_state=0//just a stupid numbering system: 0 for not yet started (or stopped), 1 for currently playing, 2 for paused.
-			this.toggler(this.elements[0],this.paginations[0])
+			// this.toggler(this.elements[0],this.paginations[0])
 		}
 	}
 	start(){
@@ -50,11 +50,11 @@ class CarouselManager{
 		const __internal_step=async timestamp=>{
 			if(!this.delta)
 				this.delta=timestamp
-				await wait(this.delay)
 			if(this.play_state==1){
 				this.toggler(this.elements[this.curr],this.paginations[this.curr])
 				this.curr++;this.curr%=this.elements.length
 				this.toggler(this.elements[this.curr],this.paginations[this.curr])
+				await wait(this.delay)
 				this.anim=window.requestAnimationFrame(__internal_step)
 			}
 		}
@@ -100,4 +100,4 @@ let carmgr=new CarouselManager(gebi('heroCarousel'),(carousel_item,pagination_it
 	carousel_item.classList.toggle('test_cls')
 	pagination_item.classList.toggle('line')
 },3575)
-carmgr.start()
+setTimeout(() => carmgr.start(), carmgr.delay)
