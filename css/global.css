@@ -31,7 +31,17 @@ nav {
     top: 0;
     width: 100%;
 	height: 50px;
-	background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.25s;
+}
+nav a {
+    transition: color 0.25s;
+}
+.navTransparent {
+    background-color: transparent;
+}
+.navTransparent a {
+    color: rgb(180, 255, 255);
 }
 .header-nav{
 	display: inline;
@@ -110,7 +120,9 @@ nav .wrapper {
 nav .wrapper span {
     position: relative;
     top: 25%;
+    font-weight: 600;
     text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transition: text-shadow 0.5s;
 }
 nav .wrapper:hover span, nav .wrapper:focus span {

@@ -4,7 +4,7 @@ function navigator_menu(e){
 }
 if (gebi('logo')) gebi('logo').addEventListener('click',navigator_menu)
 
-function handleFooterPos() {
+var handleFooterPos = () => {
 	function tagHeight(s) {
 		return document.getElementsByTagName(s)[0].getBoundingClientRect().height;
 	}
@@ -14,10 +14,20 @@ function handleFooterPos() {
 		document.getElementsByTagName('footer')[0].style.bottom = null;
 	}
 }
+const gebtn = tag => document.getElementsByTagName(tag);
+var handleNavScroll = () => {
+	if (window.scrollY > 50) {
+		gebtn('nav')[0].classList.remove('navTransparent');
+	} else {
+		gebtn('nav')[0].classList.add('navTransparent');
+	}
+}
 handleFooterPos();
 window.addEventListener('resize', handleFooterPos);
+handleNavScroll();
+window.addEventListener('scroll', handleNavScroll);
 
-function crEl(typ, content, classes, attrib) {
+var crEl = (typ, content, classes, attrib) => {
 	var ret = document.createElement(typ);
 	if (classes) {
 		classes.map(c => ret.classList.add(c));
