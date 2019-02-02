@@ -20,7 +20,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
         @import url('https://fonts.googleapis.com/css?family=Oswald');
-        @import url('https://fonts.googleapis.com/css?family=KoHo');
         @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 
         article {
@@ -32,7 +31,7 @@
             margin-top: 40px;
             width: 80%;
             max-width: 800px;
-            position: absolute;
+            position: relative;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -68,7 +67,7 @@
             z-index: 1;
         }
 
-        .alumni .reverse .date {
+        .alumni .card:nth-child(odd) .date {
             float: left;
             left: 30px;
         }
@@ -76,7 +75,7 @@
         .alumni .card .date p {
             font-size: 80px;
             font-family: 'Fira Sans Condensed', sans-serif;
-            text-shadow: 0 4px 5px rgba(0,0,0,0.2);
+            text-shadow: 0 4px 5px rgba(0,0,0,0.4);
             padding: 0;
             margin: 0;
             color: #fff;
@@ -90,7 +89,7 @@
             transition: all .2s;
         }
 
-        .alumni .reverse img {
+        .alumni .card:nth-child(odd) img {
             float: right;
             transform: translate(30px,-30px);
             margin-left: -10px;
@@ -114,8 +113,8 @@
             padding: 0;
             margin: 0;
             margin-top: 5px;
-            font-family: 'KoHo', sans-serif;
-            font-size: 20px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 18px;
             color: rgb(161, 161, 161);
         }
 
@@ -130,7 +129,7 @@
             line-height: 30px;
         }
 
-        /* tab view */
+        /* tab view - 1 */
         @media(max-width:850px) {  
             .alumni .card {
                 min-height: 200px;
@@ -155,6 +154,38 @@
             .alumni .card .content .text {
                 font-size: 15px;
                 line-height: 20px;
+                padding: 10px;
+            }
+        }
+
+        /* tab view - 2 */
+        @media(max-width:700px) {  
+            .alumni .card {
+                min-height: 150px;
+                margin-top: 50px;
+                margin-bottom: 100px;
+            }
+            .alumni .card .date {
+                top: -28px;
+            }
+            .alumni .card .date p {
+                font-size: 35px;
+            }
+            .alumni .card img {
+                height: 150px;
+                margin-right: -10px;
+            }
+            .alumni .card .content .heading {
+                font-size: 22px;
+                margin-top: 0px;
+            }
+            .alumni .card .content .name {
+                font-size: 12px;
+            }
+            .alumni .card .content .text {
+                font-size: 13px;
+                line-height: 18px;
+                padding: 5px;
             }
         }
 
@@ -173,11 +204,12 @@
                 top: -25px;
                 right: 10px;
             }
-            .alumni .reverse .date {
+            .alumni .card:nth-child(odd) .date {
                 left: 10px;
             }
             .alumni .card .date p {
                 font-size: 30px;
+                text-shadow: 0 2px 2px rgba(0,0,0,0.4);
             }
             .alumni .card img {
                 float: none;
@@ -185,7 +217,7 @@
                 transform: translate(0,0);
                 margin-bottom: 0;
             }
-            .alumni .reverse img {
+            .alumni .card:nth-child(odd) img {
                 float: none;
                 transform: translate(0,0);
                 margin-left: 0;
@@ -219,9 +251,9 @@
        <a href="/events.html" class="wrapper"><span>Events</span></a>
        <a href="/team.html" class="wrapper"><span>Team</span></a>
        <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
-	</nav>
-	<article>
-		<section class="alumni">
+    </nav>
+    
+	<article class="alumni">
 
             <h1 class="headline"><img src="images/logo.png" alt="Logo"> Alumni</h1>
 
@@ -231,11 +263,11 @@
                 <div class="content">
                     <h3 class="heading">A Not So Long Heading</h3>
                     <p class="name">- John Doe</p>
-                    <p class="text">Lorem ipsum Lorem ipsum dolor sit m? Ullam nemo itaque ad? Vel vitae saepe recusandae quae non consequatur. Architecto cupiditate excepturi qui placeat tempore culpa blanditiis, minima impedit veniam atque, enim ullam praesentium recusandae nesciunt officiis doloribus! Eius labore delectus.</p>
+                    <p class="text">Lorem ipsum dolor sit m? Ullam nemo itaque ad? Vel vitae saepe recusandae quae non consequatur. Architecto cupiditate excepturi qui placeat tempore culpa blanditiis, minima impedit veniam atque, enim ullam praesentium recusandae nesciunt officiis doloribus! Eius labore delectus.</p>
                 </div>
             </div>
 
-            <div class="card reverse">
+            <div class="card">
                 <span class="date"><p>Nov 2018</p></span>
                 <img src="images/alumni/sample1.jpeg" alt="coder">
                 <div class="content">
@@ -255,7 +287,6 @@
                 </div>
             </div>
 
-        </section>
     </article>
 
 	<footer>
@@ -270,13 +301,8 @@
             <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
         </a>
     </footer>
+    
+    <script id="globalScript" src="/js/global.js"></script>
 </body>
-    <script>
-        // calculating the height of the alumni
-        var alumniHeight = document.querySelector(".alumni").offsetHeight;
-
-        // setting the top of the footer
-        document.querySelector("footer").style.top = alumniHeight + 'px';
-    </script>
 </html>
 
