@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About The Club | Team TechnoJam | Galgotias University</title>
+    <title>About TechnoJam | Team TechnoJam | Galgotias University</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the official website of TechnoJam, the technical group of Galgotias University."/>
+    <meta name="description" content="Know more about TechnoJam, the official technical club of Galgotias University."/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -23,6 +23,7 @@
             text-align: center;
             padding: 20px;
             padding-top: 0;
+            max-width: 800px !important;
         }
         article > h1 {
             font-size: 50px;
@@ -31,38 +32,18 @@
         article > h1 img {
             height: 50px;
         }
-        #bigLogo {
-            height: 400px;
-            transition: opacity 2s, transform 2s;
+        article h2 {
+            font-size: 30px;
+            margin: 20px 0;
+            text-align: left;
         }
-        .logoPreAnimation {
-            opacity: 0;
-            transform: translate3d(0, -50px, 0) scale(0.9);
-        }
-        footer {
-            bottom: 0 !important;
-        }
-        body div.intro {
-            width: 900px;
-            margin: 0;
-            color: bisque;
-            margin-left: 189px;
-            margin-top: -50px;
-            font-size: 28px;
-            text-align: justify;
-            border: 5px rgba(241, 50, 50, 0.363) solid;
-            border-radius: 9px;
-            padding: 25px;
-        }
-        #mark {
-            background-color: lightblue;
-            border-radius: 50%;
-            color: brown;
+        article p {
+            font-size: 20px;
+            text-align: left;
         }
     </style>
     <link rel="stylesheet" href="/css/global.css">
 </head>
-
 <body>
     <nav class="navTransparent">
        <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
@@ -71,20 +52,32 @@
        <a href="/team.html" class="wrapper"><span>Team</span></a>
        <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
     </nav>
-
     <article>
         <h1>About <img src="/images/logo.png" alt="TechnoJam"></h1>
-    </article>
-    <div class="intro">
-        TechnoJam , commonly knowsn as • TJam • , ia a <span id="mark">Technical Club</span> in <a href="https://www.galgotiasuniversity.edu.in/" target="_blank">Galgotias University</a> which was started in 2013 with a aim  to cultivate the coding culture in Galgotias university
-        and inspire students towards coding. Our Starting was not so good We have faced a lot of problems from not getting enough resources to lack of technical competency within the students but but as we are growing day by day we are trying to nurture the coding culture in the university.
-        And now Our Team consists of 60 + Members which are regularly working. Meet our <a href="/team.html">Team</a>
-
-	</div>
-   
-     
-
-    <footer>
+        <p>
+            TechnoJam is the official technical club of Galgotias University.
+            Our official motto is "Throttle to Learn", which eloquently describes our common
+            ambition for TechnoJam, which is to learn and lead others to learn. At TechnoJam,
+            we conduct all the technical events that happen at Galgotias University.
+        </p>
+        <h2>The Beginning</h2>
+        <p>Technojam was started in 2013 with an aim to cultivate the coding culture 
+            at Galgotias University by senior students, who even after completing their studies
+            at Galgotias University are still involved in the club's activities.
+        </p>
+        <h2>Achievements</h2>
+        <p>
+            Just last year, we conducted more than one event every month. We
+            also conducted the first ever hackathon of Galgotias University last year; it was
+            a major success.
+        </p>
+        <p>
+            Our team has grown over the years and today, it consists of more than 50 members,
+            each of whom is a part of one or more teams which is responsible for various functions
+            of TechnoJam.
+        </p>
+	</article>
+	<footer>
         <h2>Contact Us</h2>
         <a href="mailto:technojam@galgotiasuniversity.edu.in">
             <img src="/images/social/mail.png" alt="Mail icon">techno<span>jam@galgotiasun</span>iversity.edu.in
@@ -96,17 +89,6 @@
             <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
         </a>
     </footer>
-    <script>
-        document.getElementById('bigLogo').src = '/images/index/logo.png';
-
-        // ensures that animation occurs after logo has loaded.
-        document.getElementById('bigLogo').addEventListener('load', function () {
-            document.getElementById('bigLogo').classList.remove('logoPreAnimation');
-            setTimeout(function () {
-                document.getElementById('bigLogo').style.transition = 'all 0s';
-            }, 2000);
-        });
-    </script>
-    <script src="/js/global.js"></script>
+    <script id="globalScript" src="/js/global.js"></script>
 </body>
-</html>
+</html> 

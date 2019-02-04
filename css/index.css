@@ -81,10 +81,11 @@ body{
 	margin-right: 10px;
 	height: 40px;
 	width: 40px;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	text-align: center;
 	vertical-align: center;
 	border-radius: 50%;
+	cursor: pointer;
 }
 .carousel-buttons div img {
 	position: relative;

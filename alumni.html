@@ -21,21 +21,10 @@
         @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
         @import url('https://fonts.googleapis.com/css?family=Oswald');
         @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
-
-        article {
-            margin: 0;
-            padding: 0;
-        }
-
         .alumni{
-            margin-top: 40px;
-            width: 80%;
+            width: 80vw;
             max-width: 800px;
             position: relative;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 20px;
         }
 
         .alumni .headline{
@@ -130,7 +119,10 @@
         }
 
         /* tab view - 1 */
-        @media(max-width:850px) {  
+        @media(max-width:850px) {
+            .alumni {
+                width: 90vw;
+            }
             .alumni .card {
                 min-height: 200px;
                 margin-top: 50px;
@@ -211,18 +203,17 @@
                 font-size: 30px;
                 text-shadow: 0 2px 2px rgba(0,0,0,0.4);
             }
-            .alumni .card img {
-                float: none;
-                width: 100%;
+            .alumni .card img, .alumni .card:nth-child(odd) img {
+                width: auto;
                 height: auto;
+                max-width: 100%;
                 max-height: 300px;
-                transform: translate(0,0);
-                margin-bottom: 0;
-            }
-            .alumni .card:nth-child(odd) img {
-                float: none;
-                transform: translate(0,0);
+                position: relative;
+                left: 50%;
+                transform: translate(-50%,0);
                 margin-left: 0;
+                margin-bottom: 0;
+                float: none;
             }
             .alumni .card .content {
                 padding: 10px;
@@ -246,7 +237,6 @@
 </head>
 
 <body>
-	
 	<nav class="navTransparent">
        <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
        <a href="/about.html" class="wrapper"><span>About</span></a>
@@ -254,11 +244,8 @@
        <a href="/team.html" class="wrapper"><span>Team</span></a>
        <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
     </nav>
-    
 	<article class="alumni">
-
             <h1 class="headline"><img src="images/logo.png" alt="Logo"> Alumni</h1>
-
             <div class="card">
                 <span class="date"><p>Jan 2019</p></span>
                 <img src="images/alumni/sample1.jpeg" alt="">

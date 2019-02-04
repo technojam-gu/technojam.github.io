@@ -19,7 +19,6 @@ class CarouselManager{
 				return false
 			})
 			let pagination_counter=0
-			console.log(this.paginations)
 			this.paginations[0].childNodes[3].childNodes.forEach(e=>{
 				if (e.classList){
 					if (e.classList.contains('prev')) this.prevButton = e;
