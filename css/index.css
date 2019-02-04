@@ -2,7 +2,7 @@ body{
 	background: black;
 }
 .carousel{
-	display: inline-flex;
+	display: block;
 	height: 100vh;
 	margin: 0;
 	overflow: hidden;
@@ -12,17 +12,26 @@ body{
 }
 .carousel-item{
 	height: inherit;
-	width: 0;
+	position: absolute;
+	width: 100vw;
 	color: var(--text-primary-color);
 	text-align: center;
-	transition: 0.3s ease;
+	transition: all 0s ease;
 	overflow: hidden;
-	transform: matrix3d(1,0,0.00,0,0.00,0.94,0.34,0,0,-0.34,0.94,0,-100,0,0,1);
-	
+	transform: translate(60vw, 0) scale(0.8, 0.8) rotateY(-90deg);	
+}
+.exit{
+	transition: transform 0.3s ease;
+	transform: translate(-60vw, 0) scale(0.8, 0.8) rotateY(90deg);
 }
 .carousel-controls{
 	position: absolute;
 	bottom: 0;
+	width: 100vw;
+	z-index: 20;
+}
+.carousel-controls div{
+	margin: 10px;
 }
 .carousel-pagination {
     display: flex;
@@ -38,13 +47,12 @@ body{
 	vertical-align: middle;
 	justify-items: center;
 	align-content: center;
-	width: 100vw;
 }
 .carousel-pagination>li{
-	margin-right: 3px;
+	margin-right: 10px;
 	box-shadow: 1px 2px 4px #00000099;
 	transition: 0.3s ease;
-	height: 7px;
+	height: 15px;
 	cursor: pointer;
 }
 .carousel-page{
@@ -52,7 +60,7 @@ body{
 }
 .dot{
 	height: inherit;
-	width: 7px;
+	width: 15px;
 	background: #8c8c8cd7;
 	content: " ";
 	border-radius: 100%;
@@ -65,24 +73,38 @@ body{
 	margin-right: 6px;
 	content: " ";
 }
+.carousel-buttons {
+	display: flex;
+	justify-content: center;
+}
+.carousel-buttons div {
+	margin-right: 10px;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	vertical-align: center;
+	border-radius: 50%;
+}
+.carousel-buttons div img {
+	position: relative;
+	left: 25%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.prev img {
+	transform: translate(-50%, -50%) rotate(180deg) !important;
+}
 .test_cls{
 	color: #000!important;
-	width: 100vw;
-	opacity: 1;
-	transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
-}
-.events-hero{
-	background: radial-gradient(#000028,#00008b)#00008b;
-	background-position: center center;
-	background-repeat: round;
-	background-size: 100% 100%;
-	height: 100%;
+	transition: transform 0.3s ease;
+	transform: translate(0, 0) scale(1, 1) rotateY(0);
 }
 .hero-headings{
 	font-weight: 700;
 	color: #fff;
 	padding-top: 70px;
-	font-size: 250%;
+	font-size: 50px;
 	margin-top: 0;
 }
 .overflowing-card{
@@ -132,23 +154,22 @@ h1.overflowing {
 	margin: 0.5em auto;
     width: 4em;
 }
-.alumni-hero{
+.carousel-item:nth-child(1) {
+	background: radial-gradient(#000028,#00008b)#00008b;
+}
+.carousel-item:nth-child(2) {
 	background: url('../images/Alumni.jpeg');
-	background-repeat: round;
-	background-size: 100% 100%;
-	height: 100%;
 }
-.about-hero {
-    background: url('../images/logo.png'),url('../images/GU.jpg');
-    height: 100%;
-    background-position: left center;
-    background-repeat: no-repeat, round;
-	background-size: auto auto,100% 100%;
+.carousel-item:nth-child(3) {
+    background: url('../images/GU.jpg');
 }
-.team-hero{
+.carousel-item:nth-child(4) {
 	background: url('../images/avengers.jpg');
-	background-repeat: round;
-	background-size: 100% 100%;
+}
+.carousel-item{
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100%;
 }
 /*MEDIA QUERIES*/
@@ -158,6 +179,7 @@ h1.overflowing {
 		background: var(--primary-background);
 		position: relative;
 		padding: 0.5em;
+		margin-top: 2em;
 		border-radius: 4px;
 		color: var(--text-primary-color);
 		font-size: small;
@@ -180,8 +202,7 @@ h1.overflowing {
 	.hero-headings {
 		font-weight: 700;
 		color: #fff;
-		padding-top: 0em;
-		font-size: large;
+		font-size: 35px;
 	}
 	.left-card {
 		position: static;

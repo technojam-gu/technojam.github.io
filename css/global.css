@@ -15,6 +15,7 @@ body {
     background-image: linear-gradient(rgb(91, 212, 228), rgb(243, 62, 128));
     background-attachment: fixed;
     color: white;
+    -webkit-tap-highlight-color: transparent;
 }
 a {
     font-weight: 300;
