@@ -1,6 +1,9 @@
 body{
 	background: black;
 }
+article {
+	max-width: 100vw;
+}
 .carousel{
 	display: block;
 	height: 100vh;
@@ -169,7 +172,7 @@ h1.overflowing {
 }
 .carousel-item{
 	background-position: center center;
-	background-repeat: no-repeat;
+	background-repeat: round;
 	background-size: cover;
 	height: 100%;
 }

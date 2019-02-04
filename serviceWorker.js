@@ -1,4 +1,4 @@
-var CACHE_NAME = 'tj-cache-v1.1';
+var CACHE_NAME = 'tj-cache-v1.2';
 var urlsToCache = [
     '/',
     '/events.html',
