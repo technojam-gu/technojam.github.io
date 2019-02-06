@@ -23,6 +23,9 @@
             max-width: 500px;
             margin: 0 auto 50px auto;
         }
+        article .container {
+            padding: 0 20px;
+        }
         h1 {
             color: rgb(117, 45, 134);
             font-size: 50px;
@@ -31,10 +34,10 @@
         article > .wrapper {
             width: 100%;
             display: grid;
-            grid-template-columns: auto auto auto auto auto;
+            grid-template-columns: auto auto auto auto;
         }
         article > .wrapper img {
-            max-width: 20vw;
+            max-width: 25vw;
             cursor: pointer;
         }
         #cover {
@@ -93,14 +96,6 @@
         footer {
             bottom: initial !important;
         }
-        @media screen and (max-width: 1400px) {
-            article > .wrapper {
-                grid-template-columns: auto auto auto auto;
-            }
-            article > .wrapper a img {
-                max-width: 25vw;
-            }
-        }
         @media screen and (max-width: 1000px) {
             article > .wrapper {
                 grid-template-columns: auto auto auto;
@@ -129,7 +124,7 @@
     <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
-    <nav>
+    <nav class="navTransparent">
        <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
        <a href="/about.html" class="wrapper"><span>About</span></a>
        <a href="/events.html" class="wrapper"><span>Events</span></a>
@@ -154,18 +149,15 @@
     </div>
     <footer>
         <h2>Contact Us</h2>
-        <div class="wrapper">
-            <img src="/images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
-            techno<span>jam@galgotiasun</span>iversity.edu.in</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
-            @technojam.scse</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
-            @technojam_galgotias</a>
-        </div>
+        <a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon">techno<span>jam@galgotiasun</span>iversity.edu.in
+        </a>
+        <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon">@technojam.scse
+        </a>
+        <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
+        </a>
     </footer>
     <script>
         var event = {};

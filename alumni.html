@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alumni | Galgotias University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is the official website of TechnoJam, the technical group of Galgotias University."/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#58cfe8">
+    <meta name="apple-mobile-web-app-title" content="TechnoJam">
+    <meta name="application-name" content="TechnoJam">
+    <meta name="msapplication-TileColor" content="#58cfe8">
+    <meta name="theme-color" content="#58cfe8">
+    <link rel="stylesheet" href="/css/global.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
+        @import url('https://fonts.googleapis.com/css?family=Oswald');
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+        .alumni .headline{
+            text-align: center;
+            padding-bottom: 80px;
+            color: rgb(117, 45, 134);
+            font-size: 50px;
+            font-weight: 100;
+        }
+        .alumni .card {
+            color:black;
+            text-align: left;
+            background-color: #fff;
+            width: 80vw;
+            max-width: 800px;
+            min-height: 250px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 50px;
+            margin-bottom: 200px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        .alumni .card .date {
+            float: right;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: -65px;
+            right: 30px;
+            z-index: 1;
+        }
+
+        .alumni .card:nth-child(odd) .date {
+            float: left;
+            left: 30px;
+        }
+
+        .alumni .card .date p {
+            font-size: 80px;
+            font-family: 'Fira Sans Condensed', sans-serif;
+            text-shadow: 0 4px 5px rgba(0,0,0,0.4);
+            padding: 0;
+            margin: 0;
+            color: #fff;
+        }
+
+        .alumni .card img {
+            float: left;
+            height: 250px;
+            transform: translate(-30px,-30px);
+            margin-bottom: -20px;
+            transition: all .2s;
+        }
+
+        .alumni .card:nth-child(odd) img {
+            float: right;
+            transform: translate(30px,-30px);
+            margin-left: -10px;
+        }
+
+        .alumni .card .content {
+            padding: 20px;
+            margin: 0;
+        }
+
+        .alumni .card .content .heading {
+            margin: 0;
+            margin-top: 20px;
+            padding: 0;
+            font-size: 40px;
+            font-family: 'Oswald', sans-serif;
+            color: rgb(44, 44, 44);
+        }
+
+        .alumni .card .content .name {
+            padding: 0;
+            margin: 0;
+            margin-top: 5px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 18px;
+            color: rgb(161, 161, 161);
+        }
+
+        .alumni .card .content .text {
+            padding: 20px;
+            margin: 0;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+            color: rgb(78, 78, 78);
+            letter-spacing: 1px;
+            word-spacing: 3px;
+            line-height: 30px;
+        }
+
+        /* tab view - 1 */
+        @media(max-width:850px) {
+            .alumni .card {
+                width: 80vw;
+                min-height: 200px;
+                margin-top: 50px;
+                margin-bottom: 100px;
+            }
+            .alumni .card .date {
+                top: -50px;
+            }
+            .alumni .card .date p {
+                font-size: 60px;
+            }
+            .alumni .card img {
+                height: 200px;
+            }
+            .alumni .card .content .heading {
+                font-size: 30px;
+            }
+            .alumni .card .content .name {
+                font-size: 15px;
+            }
+            .alumni .card .content .text {
+                font-size: 15px;
+                line-height: 20px;
+                padding: 10px;
+            }
+        }
+
+        /* tab view - 2 */
+        @media(max-width:700px) {
+            .alumni .card {
+                min-height: 150px;
+                margin-top: 50px;
+                margin-bottom: 100px;
+                width: calc(90vw - 30px);
+            }
+            .alumni .card .date {
+                top: -28px;
+            }
+            .alumni .card .date p {
+                font-size: 35px;
+            }
+            .alumni .card img {
+                height: 150px;
+                margin-right: -10px;
+            }
+            .alumni .card .content .heading {
+                font-size: 22px;
+                margin-top: 0px;
+            }
+            .alumni .card .content .name {
+                font-size: 12px;
+            }
+            .alumni .card .content .text {
+                font-size: 13px;
+                line-height: 18px;
+                padding: 5px;
+            }
+        }
+
+        /* mobile view */
+        @media(max-width:450px) {
+            .alumni .headline{
+                padding-bottom: 0px;
+            }
+            .alumni .card {
+                margin-bottom: 80px;
+                width: 90vw;
+            }
+            .alumni .card .wrapper {
+                max-height: 90vw;
+                overflow: hidden;
+            }
+            .alumni .card .date {
+                top: -25px;
+                right: 10px;
+            }
+            .alumni .card:nth-child(odd) .date {
+                left: 10px;
+            }
+            .alumni .card .date p {
+                font-size: 30px;
+                text-shadow: 0 2px 2px rgba(0,0,0,0.4);
+            }
+            .alumni .card img, .alumni .card:nth-child(odd) img {
+                width: 100%;
+                height: auto;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%,0);
+                margin-left: 0;
+                margin-bottom: 0;
+                float: none;
+            }
+            .alumni .card .content {
+                padding: 10px;
+                text-align: center;
+            }
+            .alumni .card .content .heading {
+                margin-top: 0;
+                font-size: 25px;
+            }
+            .alumni .card .content .name {
+                margin-top: 5px;
+                font-size: 15px;
+            }
+            .alumni .card .content .text {
+                padding: 10px;
+                font-size: 15px;
+                line-height: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+	<nav class="navTransparent">
+       <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
+       <a href="/about.html" class="wrapper"><span>About</span></a>
+       <a href="/events.html" class="wrapper"><span>Events</span></a>
+       <a href="/team.html" class="wrapper"><span>Team</span></a>
+       <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
+    </nav>
+	<article class="alumni">
+            <h1 class="headline"><img src="images/logo.png" alt="Logo"> Alumni</h1>
+            <div class="card">
+                <span class="date"><p>Jan 2019</p></span>
+                <div class="wrapper"><img src="images/alumni/sample1.jpeg" alt="coder"></div>                
+                <div class="content">
+                    <h3 class="heading">A Not So Long Heading</h3>
+                    <p class="name">- John Doe</p>
+                    <p class="text">Lorem ipsum dolor sit m? Ullam nemo itaque ad? Vel vitae saepe recusandae quae non consequatur. Architecto cupiditate excepturi qui placeat tempore culpa blanditiis, minima impedit veniam atque, enim ullam praesentium recusandae nesciunt officiis doloribus! Eius labore delectus.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="date"><p>Nov 2018</p></span>
+                <div class="wrapper"><img src="images/alumni/sample1.jpeg" alt="coder"></div>
+                <div class="content">
+                    <h3 class="heading">Some More Heading</h3>
+                    <p class="name">- shivu </p>
+                    <p class="text">Lorem ipsum Lorem ipsum dol!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="date"><p>Aug 2018</p></span>
+                <div class="wrapper"><img src="images/alumni/sample2.jpeg" alt="coder"></div>
+                <div class="content">
+                    <h3 class="heading">No More Heading</h3>
+                    <p class="name">- shivu</p>
+                    <p class="text">Lorem ipsum Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+
+    </article>
+
+	<footer>
+        <h2>Contact Us</h2>
+        <a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon">techno<span>jam@galgotiasun</span>iversity.edu.in
+        </a>
+        <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon">@technojam.scse
+        </a>
+        <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
+        </a>
+    </footer>
+    
+    <script id="globalScript" src="/js/global.js"></script>
+</body>
+</html>
+

@@ -1,10 +1,33 @@
 const gebi=id=>document.getElementById(id)
 function navigator_menu(e){
 	gebi('navs').classList.toggle('show')
-	console.log('I\'m clicked')
 }
 if (gebi('logo')) gebi('logo').addEventListener('click',navigator_menu)
-function createElem(typ, content, classes, attrib) {
+
+var handleFooterPos = () => {
+	function tagHeight(s) {
+		return document.getElementsByTagName(s)[0].getBoundingClientRect().height;
+	}
+	if ((tagHeight('article') + tagHeight('footer') + 70) < window.innerHeight) { // article margin
+		document.getElementsByTagName('footer')[0].style.bottom = '0';
+	} else {
+		document.getElementsByTagName('footer')[0].style.bottom = null;
+	}
+}
+const gebtn = tag => document.getElementsByTagName(tag);
+var handleNavScroll = () => {
+	if (window.scrollY > 50) {
+		gebtn('nav')[0].classList.remove('navTransparent');
+	} else {
+		gebtn('nav')[0].classList.add('navTransparent');
+	}
+}
+handleFooterPos();
+window.addEventListener('resize', handleFooterPos);
+handleNavScroll();
+window.addEventListener('scroll', handleNavScroll);
+
+var crEl = (typ, content, classes, attrib) => {
 	var ret = document.createElement(typ);
 	if (classes) {
 		classes.map(c => ret.classList.add(c));

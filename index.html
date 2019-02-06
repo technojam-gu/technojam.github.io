@@ -17,7 +17,7 @@
     <meta name="theme-color" content="#58cfe8">
     <style>
         article {
-            text-align: center;
+			margin-top: 0 !important;
         }
         #bigLogo {
             height: 400px;
@@ -27,50 +27,143 @@
             opacity: 0;
             transform: translate3d(0, -50px, 0) scale(0.9);
         }
-        footer {
-            bottom: 0 !important;
-        }
     </style>
     <link rel="stylesheet" href="/css/global.css">
+	<link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
-    <nav>
+	<!--<header class="global-header">
+		<nav class="header-nav">
+				<img src="./images/android-chrome-192x192.png" alt="TechnoJam Logo" id="logo">
+				<ul id="navs" class="navs">
+					<li>
+						<a href="./about.html">
+							<span>About</span>
+						</a>
+					</li>
+					<li>
+						<a href="./team.html">
+							<span>Team</span>
+						</a>
+					</li>
+				</ul>
+			</nav>			
+	</header>-->
+	<nav class="navTransparent">
        <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
        <a href="/about.html" class="wrapper"><span>About</span></a>
        <a href="/events.html" class="wrapper"><span>Events</span></a>
        <a href="/team.html" class="wrapper"><span>Team</span></a>
        <a href="/alumni.html" class="wrapper"><span>Alumni</span></a>
-    </nav>
-    <article>
-        <img id="bigLogo" class="logoPreAnimation" src="" alt="TechnoJam Logo">
-    </article>
-    <footer>
+	</nav>
+	<article>
+		<div class="carousel" id="heroCarousel" >
+			<div class="carousel-item test_cls">
+					<div class="events-hero">
+						<h1 class="hero-headings">
+							Events
+						</h1>
+						<div class="overflowing-card">
+							Some information about the event.
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
+							<h1 class="overflowing">
+								Some Random Event
+							</h1>
+							<div class="left-card">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								<a href="./events.html" class="md2btn">Events</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="alumni-hero">
+						<h1 class="hero-headings">
+							Alumni
+						</h1>
+						<div class="overflowing-card">
+							Alumni related to TechnoJam
+							<h1 class="overflowing">
+								Life Beyond TechnoJam
+							</h1>
+							<div class="left-card">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+									<a href="./alumni.html" class="md2btn">Alumni</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="about-hero">
+						<h1 class="hero-headings" style="color: var(--text-secondary-color)">
+							TechnoJam &mdash; The tech club of Galgotias University
+						</h1>
+						<div class="overflowing-card">
+							Lorem Ipsum
+							<h1 class="overflowing">
+								The tech cult of GU
+							</h1>
+							<div class="left-card">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								<a href="./about.html" class="md2btn">About</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="team-hero">
+						<h1 class="hero-headings" style="color: var(--text-secondary-color)">
+							People who make TeachnoJam more than just a team
+						</h1>
+						<div class="overflowing-card">
+							Lorem Ipsum
+							<h1 class="overflowing">
+								The Clan
+							</h1>
+							<div class="left-card">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								<a href="./team.html" class="md2btn">Team</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-controls">
+					<ul class="carousel-pagination">
+						<li class="dot line">
+							<div class="carousel-page"></div>
+						</li>
+						<li class="dot">
+							<div class="carousel-page"></div>
+						</li>
+						<li class="dot">
+							<div class="carousel-page"></div>
+						</li>
+						<li class="dot">
+								<div class="carousel-page"></div>
+						</li>
+					</ul>
+					<div class="carousel-buttons">
+						<div class="prev"><img src="/images/gallery/next.png" alt="Previous"></div>
+						<div class="next"><img src="/images/gallery/next.png" alt="Next"></div>
+					</div>
+				</div>
+		</div>
+	</article>
+	<footer>
         <h2>Contact Us</h2>
-        <div class="wrapper">
-            <img src="/images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
-            techno<span>jam@galgotiasun</span>iversity.edu.in</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
-            @technojam.scse</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
-            @technojam_galgotias</a>
-        </div>
+        <a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon">techno<span>jam@galgotiasun</span>iversity.edu.in
+        </a>
+        <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon">@technojam.scse
+        </a>
+        <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
+        </a>
     </footer>
-    <script>
-        document.getElementById('bigLogo').src = '/images/index/logo.png';
-
-        // ensures that animation occurs after logo has loaded.
-        document.getElementById('bigLogo').addEventListener('load', function () {
-            document.getElementById('bigLogo').classList.remove('logoPreAnimation');
-            setTimeout(function () {
-                document.getElementById('bigLogo').style.transition = 'all 0s';
-            }, 2000);
-        });
-    </script>
-    <script src="/js/global.js"></script>
+	<script src="./js/global.js"></script>
+	<script src="./js/index.js"></script>
 </body>
 </html>
+

@@ -2,7 +2,7 @@
 
 This repository contains the source code for the official website of TechnoJam.
 
-### Pages the website will contain:
+## Pages the Website will Contain
 
 - Index
 - About
@@ -10,7 +10,7 @@ This repository contains the source code for the official website of TechnoJam.
 - Team
 - Alumni
 
-### Directory Structure
+## Directory Structure
 
 ```bash
 
@@ -39,6 +39,14 @@ Repo
 
 => events.html contains previous event names, details and photos.
 
-### Contributing to This Repo
+## How to Contribute
 
 [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+## Authors of the Website
+
+[Contributors List](https://github.com/technojam/technojam.github.io/graphs/contributors)
+
+## Code of Conduct
+
+[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)

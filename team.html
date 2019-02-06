@@ -36,7 +36,7 @@
         }
         article > .wrapper {
             display: grid;
-            grid-template-columns: auto auto auto auto;
+            grid-template-columns: auto auto auto;
             grid-gap: 50px;
         }
         .card {
@@ -56,14 +56,17 @@
         .profile img {
             height: 30px;
             border-radius: 50%;
+            margin-left: auto;
+            margin-right: 10px;
         }
         .profile h1, .profile img {
-            margin: 15px 0 35px 0;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
         .profile h1 {
             font-size: 30px;
             font-weight: 100;
-            margin-left: auto;
+            margin-left: 10px;
             margin-right: auto;
         }
         .card .wrapper a {
@@ -72,11 +75,6 @@
         .card .wrapper a img {
             margin: 20px;
             height: 40px;
-        }
-        @media screen and (max-width: 1400px) {
-            article > .wrapper {
-                grid-template-columns: auto auto auto;
-            }
         }
         @media screen and (max-width: 1000px) {
             article > .wrapper {
@@ -92,7 +90,7 @@
     <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
-    <nav>
+    <nav class="navTransparent">
        <a href="/" class="wrapper"><img src="/images/logo.png" alt="TechnoJam Logo"></a>
        <a href="/about.html" class="wrapper"><span>About</span></a>
        <a href="/events.html" class="wrapper"><span>Events</span></a>
@@ -106,43 +104,41 @@
 	</article>
 	<footer>
         <h2>Contact Us</h2>
-        <div class="wrapper">
-            <img src="/images/social/mail.png" alt="Mail icon"><a href="mailto:technojam@galgotiasuniversity.edu.in">
-            techno<span>jam@galgotiasun</span>iversity.edu.in</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/facebook.png" alt="Facebook icon"> <a href="https://www.facebook.com/technojam.scse/" target="_blank">
-            @technojam.scse</a>
-        </div>
-        <div class="wrapper">
-            <img src="/images/social/instagram.png" alt="Instagram icon"> <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
-            @technojam_galgotias</a>
-        </div>
+        <a href="mailto:technojam@galgotiasuniversity.edu.in">
+            <img src="/images/social/mail.png" alt="Mail icon">techno<span>jam@galgotiasun</span>iversity.edu.in
+        </a>
+        <a href="https://www.facebook.com/technojam.scse/" target="_blank">
+            <img src="/images/social/facebook.png" alt="Facebook icon">@technojam.scse
+        </a>
+        <a href="https://www.instagram.com/technojam_galgotias/" target="_blank">
+            <img src="/images/social/instagram.png" alt="Instagram icon">@technojam_galgotias
+        </a>
     </footer>
     <script id="globalScript" src="/js/global.js"></script>
     <script id="teamScript" src="/js/team.js"></script>
     <script>
         function getTeam() {
-            if (typeof createElem !== 'function') {
+            if (typeof crEl !== 'function') {
                 document.getElementById('globalScript').addEventListener('load', getTeam);
             } else if (typeof teamList === 'undefined') {
                 document.getElementById('teamScript').addEventListener('load', getTeam);
             } else {
                 var outerWrapper = document.querySelector('article > .wrapper');
                 for (var i = 0; i < teamList.length; i++) {
-                    var profile  = createElem('div', [createElem('img', null, [], {
+                    var profile  = crEl('div', [crEl('img', null, [], {
                         'src': teamList[i].photo,
                         'alt':'Profile Picture',
-                    }), createElem('h1', teamList[i].name)], ['profile']);
-                    outerWrapper.appendChild(createElem('div', createElem('div',[
+                    }), crEl('h1', teamList[i].name)], ['profile']);
+                    outerWrapper.appendChild(crEl('div', crEl('div',[
                         profile,
-                        createElem('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
-                        createElem('br'),
-                        createElem('a', createElem('img', null, [], {'src': '/images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
-                        createElem('a', createElem('img', null, [], {'src': '/images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
+                        crEl('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
+                        crEl('br'),
+                        crEl('a', crEl('img', null, [], {'src': '/images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
+                        crEl('a', crEl('img', null, [], {'src': '/images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
                     ] ,['wrapper']), ['card']));
                 }
             }
+            handleFooterPos();
         }
         getTeam();
     </script>
