@@ -4,7 +4,7 @@ function navigator_menu(e){
 }
 if (gebi('logo')) gebi('logo').addEventListener('click',navigator_menu)
 
-var handleFooterPos = () => {
+const handleFooterPos = () => {
 	function tagHeight(s) {
 		return document.getElementsByTagName(s)[0].getBoundingClientRect().height;
 	}
@@ -15,7 +15,7 @@ var handleFooterPos = () => {
 	}
 }
 const gebtn = tag => document.getElementsByTagName(tag);
-var handleNavScroll = () => {
+const handleNavScroll = () => {
 	if (window.scrollY > 50) {
 		gebtn('nav')[0].classList.remove('navTransparent');
 	} else {
@@ -27,16 +27,16 @@ window.addEventListener('resize', handleFooterPos);
 handleNavScroll();
 window.addEventListener('scroll', handleNavScroll);
 
-var crEl = (typ, content, classes, attrib) => {
-	var ret = document.createElement(typ);
+const crEl = (typ, content, classes, attrib) => {
+	const ret = document.createElement(typ);
 	if (classes) {
 		classes.map(c => ret.classList.add(c));
 	}
 	if (attrib) {
-		for (a in attrib) ret.setAttribute(a, attrib[a]);
+		for (const a in attrib) ret.setAttribute(a, attrib[a]);
 	}
 	if (content) {
-		if (typeof content == 'string') {
+		if (typeof content === 'string') {
 			ret.appendChild(document.createTextNode(content));
 		} else {
 			if (Array.isArray(content)) {

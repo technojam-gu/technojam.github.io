@@ -59,18 +59,18 @@ class CarouselManager{
 		}
 		const prev=()=>{
 			this.pause()
-			this.change((this.curr == 0 ? this.elements.length: this.curr) - 1)
+			this.change((this.curr === 0 ? this.elements.length: this.curr) - 1)
 		}
 		if(this.prevButton)this.prevButton.addEventListener('click', prev)
 		if(this.nextButton)this.nextButton.addEventListener('click', next)
 		const __internal_step=async ()=>{
-			if(this.play_state==1){
+			if(this.play_state===1){
 				this.change(this.nextIndex())
 				await wait(this.delay)
 				this.anim=window.requestAnimationFrame(__internal_step)
 			}
 		}
-		if(this.play_state==0||this.play_state==2){
+		if(this.play_state===0||this.play_state===2){
 			this.play_state=1
 			this.anim=window.requestAnimationFrame(__internal_step)
 		}
@@ -86,17 +86,17 @@ class CarouselManager{
 		window.cancelAnimationFrame(this.anim)
 	}
 	pause(){
-		if(this.play_state==1){
+		if(this.play_state===1){
 			this.play_state=2
 			window.cancelAnimationFrame(this.anim)
 		}
 	}
 	resume(){
-		if(this.play_state==2||this.play_state==0)
+		if(this.play_state===2||this.play_state===0)
 			wait(this.delay).then(this.start())
 	}
 }
-let carmgr=new CarouselManager(gebi('heroCarousel'),(carousel_item,pagination_item)=>{
+const carmgr=new CarouselManager(gebi('heroCarousel'),(carousel_item,pagination_item)=>{
 	carousel_item.classList.add('test_cls')
 	pagination_item.classList.add('line')
 },3575,

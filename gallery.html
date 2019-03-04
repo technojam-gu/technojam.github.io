@@ -141,10 +141,10 @@
 
         </div>
     </article>
-    <div id="cover" onclick="closeCover(event)">
-        <img src="/images/gallery/close.png" id="close" onclick="closeCover(event)">
-        <img src="/images/gallery/next.png" id="prev" class="change" onclick="prevImage()">
-        <img src="/images/gallery/next.png" id="next" class="change" onclick="nextImage()">
+    <div id="cover" onclick="gallery.closeCover(event)">
+        <img src="/images/gallery/close.png" id="close" onclick="gallery.closeCover(event)">
+        <img src="/images/gallery/next.png" id="prev" class="change" onclick="gallery.prevImage()">
+        <img src="/images/gallery/next.png" id="next" class="change" onclick="gallery.nextImage()">
         <img id="coverImage" src="" alt="Full Screen">
     </div>
     <footer>
@@ -160,86 +160,87 @@
         </a>
     </footer>
     <script>
-        var event = {};
-        var currentImage = 0;
-        function getInfo() {
-            var info = document.location.href.split('#', 2)[1];
-            if (info) {
-                var arr = info.split('&');
-                for (var i = 0; i < arr.length; i++) {
-                    var entry = arr[i].split('=');
-                    event[decodeURIComponent(entry[0])] = decodeURIComponent(entry[1]);
+        const forRange = (begin, end, fn) => {
+            for (let i = begin; i < end; i++) fn(i, begin, end);
+        }
+        let gallery = {
+            event: {
+                nop: null,
+                get numberOfPhotos() {
+                    return this.nop;
+                }, set numberOfPhotos(val) {
+                    this.nop = Number(val);
+                }
+            },
+            currentImage: 0,
+            linkFromNumber: i => '/images/events/' + gallery.event.folder + '/' + String(i) + '.png',
+            initialize: () => {
+                const getInfo = () => {
+                    const info = document.location.href.split('#', 2)[1];
+                    if (info) {
+                        const arr = decodeURIComponent(info).split('&');
+                        for (const el of arr) {
+                            const entry = el.split('=');
+                            gallery.event[entry[0]] = entry[1];
+                        }
+                    }
+                };
+                const setInfo = name => {
+                    const elem = document.getElementById(name);
+                    if (elem) elem.innerHTML = gallery.event[name];
+                };
+
+                getInfo();
+                for (const x in gallery.event) setInfo(x);
+                document.title = gallery.event.name + ' | Team TechnoJam | Galgotias University';
+
+                const wrapper = document.querySelector('article > .wrapper');
+                forRange(1, Number(gallery.event.numberOfPhotos) + 1, i => {
+                    const img = document.createElement('img');
+                    const link = gallery.linkFromNumber(i);
+                    img.src = link;
+                    img.addEventListener('click', () => gallery.showImage(i));
+                    wrapper.appendChild(img);
+                });
+            }, showImage: i => {
+                gallery.currentImage = Number(i);
+                const cover = document.getElementById('cover');
+                if (cover.style.opacity == '1') {
+                    const coverImage = document.getElementById('coverImage');
+                    coverImage.classList.add('hideImage');
+                    setTimeout(() => {
+                        coverImage.src = gallery.linkFromNumber(i);
+                        coverImage.classList.remove('hideImage');
+                    }, 300);
+                } else {
+                    document.getElementById('coverImage').src = gallery.linkFromNumber(i);
+                    cover.style.opacity = '1';
+                    cover.style.zIndex = '30';
+                    document.body.style.overflowY = 'hidden';
+                }
+                if (i === 1) {
+                    document.getElementById('prev').style.display = 'none';
+                } else {
+                    document.getElementById('prev').style.display = 'block';
+                }
+                if (i == gallery.event.numberOfPhotos) {
+                    document.getElementById('next').style.display = 'none';
+                } else {
+                    document.getElementById('next').style.display = 'block';
+                }
+            }, prevImage: () => gallery.showImage(gallery.currentImage - 1),
+            nextImage: () => gallery.showImage(gallery.currentImage + 1),
+            closeCover: e => {
+                const id = e.target.id;
+                if (id === 'cover' || id === 'close') {
+                    const cover = document.getElementById('cover');
+                    cover.style.opacity = '0';
+                    document.body.style.overflowY = 'initial';
+                    setTimeout(() => cover.style.zIndex = '-1', 750);
                 }
             }
-        }
-        function setInfo(name) {
-            var elem = document.getElementById(name);
-            if (elem) elem.innerHTML = event[name];
-        }
-        function linkFromNumber(i) {
-            return '/images/events/' + event.folder + '/' + String(i) + '.png';
-        }
-        function initialize() {
-            getInfo();
-            for (var x in event) setInfo(x);
-            document.title = event.name + ' | Team TechnoJam | Galgotias University';
-
-            var wrapper = document.querySelector('article > .wrapper');
-            for (let i = 1; i <= event.numberOfPhotos; i++) {
-                var img = document.createElement('img');
-                var link = linkFromNumber(i);
-                img.src = link;
-                img.addEventListener('click', function () {
-                    showImage(i);
-                })
-                wrapper.appendChild(img);
-            }            
-        }
-        initialize();
-        function showImage(i) {
-            currentImage = Number(i);
-            var cover = document.getElementById('cover');
-            if (cover.style.opacity == '1') {
-                var coverImage = document.getElementById('coverImage');
-                coverImage.classList.add('hideImage');
-                setTimeout(() => {
-                    coverImage.src = linkFromNumber(i);
-                    coverImage.classList.remove('hideImage');
-                }, 300);
-            } else {
-                document.getElementById('coverImage').src = linkFromNumber(i);
-                cover.style.opacity = '1';
-                cover.style.zIndex = '30';
-                document.body.style.overflowY = 'hidden';
-            }
-            if (i == 1) {
-                document.getElementById('prev').style.display = 'none';
-            } else {
-                document.getElementById('prev').style.display = 'block';
-            }
-            if (i == event.numberOfPhotos) {
-                document.getElementById('next').style.display = 'none';
-            } else {
-                document.getElementById('next').style.display = 'block';
-            }
-        }
-        function prevImage() {
-            showImage(currentImage - 1);
-        }
-        function nextImage() {
-            showImage(currentImage + 1);
-        }
-        function closeCover(e) {
-            var id = e.target.id;
-            if (id == 'cover' || id == 'close') {
-                var cover = document.getElementById('cover');
-                cover.style.opacity = '0';
-                setTimeout(function() {
-                    cover.style.zIndex = '-1';
-                    document.body.style.overflowY = 'initial';
-                }, 750);
-            }
-        }
+        };
+        gallery.initialize();
     </script>
     <script src="/js/global.js"></script>
 </body>

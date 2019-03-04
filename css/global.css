@@ -151,7 +151,6 @@ footer a {
     float: left;
     font-size: 20px;
     height: 20px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 footer img {
     height: 20px;
@@ -160,13 +159,16 @@ footer img {
     float: left;
 }
 footer a:nth-child(2) {
-    color: rgb(255, 150, 150);
+    color: rgb(219, 68, 55);
+    text-shadow: 0 0 5px rgba(219, 68, 55, 0.5);
 }
 footer a:nth-child(3) {
-    color: rgb(150, 150, 255);
+    color: rgb(59, 86, 157);
+    text-shadow: 0 0 5px rgba(59, 86, 157, 0.5);    
 }
 footer a:nth-child(4) {
-    color: rgb(255, 150, 255);
+    color: rgb(188, 42, 141);
+    text-shadow: 0 0 5px rgba(188, 42, 141, 0.5);
 }
 article {
     margin-top: 70px; /* 50px (el: nav) + 20px (gap) */
@@ -187,5 +189,10 @@ article h1 img {
     }
     footer a {
         margin-left: 10px;
+    }
+}
+@media screen and (max-width: 450px) {
+    footer a {
+        font-size: 4vw;
     }
 }

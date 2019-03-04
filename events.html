@@ -152,8 +152,8 @@
     <script id="eventScript" src="js/events.js"></script>
     <script>
         function convertToString(json) {
-            var st = '';
-            for (var a in json) {
+            let st = '';
+            for (const a in json) {
                 st += (encodeURIComponent(a) + '=' + encodeURIComponent(json[a]) + "&");
             }
             return st;
@@ -166,21 +166,31 @@
                 document.getElementById('eventScript').addEventListener('load', getEvents);
             } else {
                 eventList.map((ev, i) => {
-                    var milli = ev.date.getTime();
+                    const milli = ev.date.getTime();
                     ev.date = ev.date.toDateString();
-                    var card = crEl('div', crEl('div',
-                        [
-                            crEl('h1', ev.name),
-                            crEl('p', [
-                                crEl('span', ev.date.toString()),
+                    const card = crEl(
+                        'div', 
+                        crEl(
+                            'div',
+                            [
+                                crEl('h1', ev.name),
+                                crEl(
+                                    'p',
+                                    [
+                                        crEl('span', ev.date.toString()),
+                                        crEl('hr'),
+                                        crEl('span', ev.venue.toString()),
+                                    ],
+                                    ['loc']
+                                ),
                                 crEl('hr'),
-                                crEl('span', ev.venue.toString()),
-                            ], ['loc']),
-                            crEl('hr'),
-                            crEl('p', ev.info),
-                            crEl('a', 'View Photos', [], {'href': '/gallery.html#' + convertToString(ev)})
-                        ], ['wrapper'])
-                    , ['card']);
+                                crEl('p', ev.info),
+                                crEl('a', 'View Photos', [], {'href': '/gallery.html#' + convertToString(ev)})
+                            ],
+                            ['wrapper']
+                        ),
+                        ['card']
+                    );
                     if (Date.now() < milli) {
                         document.getElementById('upcoming').appendChild(card);
                     } else {

@@ -123,19 +123,46 @@
             } else if (typeof teamList === 'undefined') {
                 document.getElementById('teamScript').addEventListener('load', getTeam);
             } else {
-                var outerWrapper = document.querySelector('article > .wrapper');
-                for (var i = 0; i < teamList.length; i++) {
-                    var profile  = crEl('div', [crEl('img', null, [], {
-                        'src': teamList[i].photo,
-                        'alt':'Profile Picture',
-                    }), crEl('h1', teamList[i].name)], ['profile']);
-                    outerWrapper.appendChild(crEl('div', crEl('div',[
-                        profile,
-                        crEl('a', 'Email: ' + teamList[i].email, [], {'href': 'mailto:' + teamList[i].email}),
-                        crEl('br'),
-                        crEl('a', crEl('img', null, [], {'src': '/images/team/github.png'}), [], {'href': teamList[i].github, 'target': '_blank'}),
-                        crEl('a', crEl('img', null, [], {'src': '/images/team/linkedin.png'}), [], {'href': teamList[i].linkedin, 'target': '_blank'})
-                    ] ,['wrapper']), ['card']));
+                const outerWrapper = document.querySelector('article > .wrapper');
+                for (const member in teamList) {
+                    const profile  = crEl(
+                        'div',
+                        [
+                            crEl('img', null, [], {'src': member.photo, 'alt':'Profile Picture'}),
+                            crEl('h1', member.name)
+                        ],
+                        ['profile']);
+                    outerWrapper.appendChild(crEl(
+                        'div',
+                        crEl(
+                            'div',
+                            [
+                                profile,
+                                crEl('a', 'Email: ' + member.email, [], {'href': 'mailto:' + member.email}),
+                                crEl('br'),
+                                crEl(
+                                    'a',
+                                    crEl('img', null, [], {'src': '/images/team/github.png'}),
+                                    [],
+                                    {
+                                        'href': member.github,
+                                        'target': '_blank'
+                                    }
+                                ),
+                                crEl(
+                                    'a',
+                                    crEl('img', null, [], {'src': '/images/team/linkedin.png'}),
+                                    [],
+                                    {
+                                        'href': member.linkedin,
+                                        'target': '_blank'
+                                    }
+                                )
+                            ],
+                            ['wrapper']
+                        ),
+                        ['card']
+                    ));
                 }
             }
             handleFooterPos();
