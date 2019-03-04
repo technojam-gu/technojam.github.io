@@ -14,18 +14,8 @@ const handleFooterPos = () => {
 		document.getElementsByTagName('footer')[0].style.bottom = null;
 	}
 }
-const gebtn = tag => document.getElementsByTagName(tag);
-const handleNavScroll = () => {
-	if (window.scrollY > 50) {
-		gebtn('nav')[0].classList.remove('navTransparent');
-	} else {
-		gebtn('nav')[0].classList.add('navTransparent');
-	}
-}
 handleFooterPos();
 window.addEventListener('resize', handleFooterPos);
-handleNavScroll();
-window.addEventListener('scroll', handleNavScroll);
 
 const crEl = (typ, content, classes, attrib) => {
 	const ret = document.createElement(typ);
